@@ -1,0 +1,16 @@
+.list-group{
+    display: flex;
+    flex-direction: row;
+}
+
+footer{
+    background-color: grey;
+}
+.logo{
+    background: grey;
+    height: 120px;
+}
+header{
+    margin-top: 2%;
+    
+}
