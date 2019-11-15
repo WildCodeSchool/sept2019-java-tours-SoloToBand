@@ -13,34 +13,13 @@
 <body>
    
     <div class= container> <!--div page boostrap-->
-        <header>
-        <div class= "row mb-2"> <!--div ligne boostrap header-->
-            <div class="col-2">
-                <div class="logo" src=# ></div>
-            </div>
-            <div class="col-5"></div>
-            <div class="col-5 mb-2" >
-                <h1>Le coin des musiciens</h1>
-            </div>
-        </div>
-        <div class= "row mb-5">
-            <div class="col-4"></div>
 
-            <div class="col-8">
-                <ul class="list-group"> <!--Menu-->
-                    <li class="list-group-item">Acceuil</li>
-                    <li class="list-group-item">Recherche de groupe</li>
-                    <li class="list-group-item">Dépôt d'annonce</li>
-                    <li class="list-group-item">Mentions légales</li>
-                </ul>
-            </div>
-        </div>
-        </header>
+        <header th:replace="header :: top"></header> <!--Ajout du header-->
 
         <br /><br />
 
 
-        <form method="GET" action=""> <!--methode post, à voir comment envoyer les données-->
+        <form method="GET" action=""> <!--methode get, à voir comment envoyer les données-->
 
                 <div class= "row mb-2 mt-2" > <!--div ligne boostrap choix multiple-->
                 <div class="col-3"> 
@@ -106,12 +85,8 @@
         
 
     
-    <footer>
-        <div class="row">
-            <div class="col-12">
-        </div>
-
-    </footer>
+    <footer th:replace="footer :: foot"></footer> <!--Ajout du footer-->
+    
         <link rel="stylesheet" href="../static/bootstrap.min.js">
         <link rel="stylesheet" href="../static/jquery-3.4.1.min.js">
     </div>
