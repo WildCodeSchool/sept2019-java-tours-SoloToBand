@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Application<solotoband>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.solotoband.solotoband.Application",
+            "projectName": "solotoband",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-Application<solotoband>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.solotoband.Application",
+            "projectName": "solotoband",
+            "args": ""
+        }
+    ]
+}

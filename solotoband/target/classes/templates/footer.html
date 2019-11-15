@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{bootstrap.min.css}"></link> <!--import de boostrap-->
+    <link rel="stylesheet" th:href="@{Style.css}"></link>
+
+    <title>SoloToBand</title>
+</head>
+
+<body>
+   
+    <div class= container> <!--div page boostrap--> 
+        
+        <footer th:fragment="foot"> <!--départ fragment importation-->
+
+            <div class="row">  
+            
+            <div class="col">
+                <a href="#Acceuil">Acceuil</a>
+            </div>
+            <div class= "col-4">
+                <a href="#Mentions-Legal">Mentions Legal</a>
+            </div>
+            <div class="col-2">
+                <a href="#Contact-Us">Contact Us</a>
+            </div>
+            <div class="col-4">
+                <a href="https://www.wildcodeschool.com/fr-FR">Site Wild Code School</a>
+            </div>
+            </div>
+
+        </footer> <!--départ fragment importation-->
+    </div>
+</body>
+</html>

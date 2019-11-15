@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{bootstrap.min.css}"></link> <!--import de boostrap-->
+    <link rel="stylesheet" th:href="@{Style.css}"></link>
+
+    <title>SoloToBand</title>
+</head>
+
+<body>
+   
+    <div class= container> <!--div page boostrap-->
+
+        <header th:replace="header :: top"></header> <!--Ajout du header-->
+
+        <br /><br />
+
+
+        <form method="GET" th:action="@{/resultat-de-recherche}"> <!--methode get, à voir comment envoyer les données-->
+
+                <div class= "row mb-2 mt-2" > <!--div ligne boostrap choix multiple-->
+                <div class="col-3"> 
+                <legend>Instrument</legend>
+                <select name="instrument"> <!--Boucle à faire avec BDD-->
+                    <option>Guitare</option>
+                    <option>Flûte</option>
+                    <option>Baterie</option>
+                    <option>Basse</option>
+                    <option>Piano</option>
+                </select>
+                </div>
+
+                <div class="col-3">
+                <legend>Courant musical</legend>
+                <select name="Courant musical"> <!--Boucle à faire avec BDD-->
+                        <option>Rock</option>
+                        <option>Jazz</option>
+                        <option>Classique</option>
+                        <option>Electronique</option>
+                        <option>Latino</option>
+                    </select>
+                </div>
+
+                <div class="col-3">
+                <legend>Département</legend>
+                <select name="Département"> <!--Boucle à faire avec BDD-->
+                        <option>07 Ardèche</option>
+                        <option>37 Indre et Loire</option>
+                        <option>974 La Réunion</option>
+                        <option>53 La Mayenne</option>
+                    </select>
+                </div>
+            
+                <div class="col-3">
+                <legend>Niveau</legend>
+                <select name="Niveau"> <!--Boucle à faire avec BDD-->
+                        <option>Débutant</option>
+                        <option>Intermédiaire</option>
+                        <option>Confirmé</option>
+                        <option>Expert</option>
+                    </select>
+                </div>
+                </div>
+                <br /><br />
+                <br /><br />
+                <br /><br />
+                <br /><br />
+                    
+
+
+                <div class="row mt-5"> <!--div ligne boostrap bouton-->
+                <div class="col-7"></div>
+                <div class="col-4">   
+                    <div class="bouton">
+                        <input type="submit" value="Rechercher" id="rechercher" />
+                    </div>
+                </div>
+                </div>
+                <br /><br />
+        </form>
+        
+
+    
+    <footer th:replace="footer :: foot"></footer> <!--Ajout du footer-->
+    
+        <link rel="stylesheet" href="../static/bootstrap.min.js">
+        <link rel="stylesheet" href="../static/jquery-3.4.1.min.js">
+    </div>
+</body>
+</html>
