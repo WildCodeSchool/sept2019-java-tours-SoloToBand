@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{bootstrap.min.css}"></link> <!--import de boostrap-->
+    <link rel="stylesheet" th:href="@{Style.css}"></link>
+
+    <title>SoloToBand</title>
+</head>
+
+<body>
+
+    <div class=container>
+        <!--div page boostrap-->
+        <header th:replace="header :: top"></header> <!--Ajout du header-->
+        <br />
+        <br />
+        <br />
+
+        <div class="container">
+            <section>
+                <div class="row">
+
+                    <img  class= "image-resultat-groupe" hf:src="@{https://slack-redir.net/link?url=https%3A%2F%2Fpicsum.photos%2Fseed%2Fpicsum%2F200%2F300}">
+                    <div class="col">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam necessitatibus suscipit,
+                            aliquam
+                            sed
+                            aspernatur distinctio ex laudantium perspiciatis magni possimus optio animi? Ducimus
+                            temporibus
+                            atque quia
+                            nulla! Amet, esse porro.</p>
+                    </div>
+
+                    <img  class= "image-resultat-groupe" hf:src="@{https://slack-redir.net/link?url=https%3A%2F%2Fpicsum.photos%2Fseed%2Fpicsum%2F200%2F300}">
+
+                    <div class="col-6">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, perspiciatis commodi
+                            explicabo
+                            provident nulla deleniti maiores sed! Iure odio ipsum quisquam. Nam aut esse sunt,
+                            architecto
+                            voluptate ex est repellat!</p>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <img  class= "image-resultat-groupe" hf:src="@{https://slack-redir.net/link?url=https%3A%2F%2Fpicsum.photos%2Fseed%2Fpicsum%2F200%2F300}">
+                    <div class="col">
+
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci ducimus vel dolores ipsa
+                            rem,
+                            tenetur
+                            soluta quos amet saepe eligendi ab inventore, explicabo sit animi cupiditate illo atque
+                            accusantium
+                            perferendis.</p>
+
+                    </div>
+                    <img  class= "image-resultat-groupe" hf:src="@{https://slack-redir.net/link?url=https%3A%2F%2Fpicsum.photos%2Fseed%2Fpicsum%2F200%2F300}">
+                    <div class="col-6">
+
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati consequatur culpa
+                            reiciendis
+                            voluptate
+                            quos tenetur illum earum doloremque accusantium a harum iusto, nobis laboriosam deserunt
+                            hic,
+                            dolorum
+                            ducimus quod delectus!</p>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+
+        <footer th:replace="footer :: foot"></footer> <!--Ajout du footer-->
+
+        <link rel="stylesheet" href="../static/bootstrap.min.js">
+        <link rel="stylesheet" href="../static/jquery-3.4.1.min.js">
+    </div>
+
+</body>
+
+</html>

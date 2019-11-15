@@ -4,10 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class MusicienController {
+public class ResultatDeRecherche {
 
-    @GetMapping("/musicien")
-    public String home() {
-        return "musicien";
+    @GetMapping("/resultat-de-recherche")
+    public String resultat() {
+        return "resultat-de-recherche";
     }
 }
