@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{bootstrap.min.css}"></link> <!--import de boostrap-->
+    <link rel="stylesheet" th:href="@{Style.css}"></link>
+
+    <title>SoloToBand</title>
+</head>
+
+<body>
+   
+    <div class= container> <!--div page boostrap-->
+        <header>
+                <div class= "row mb-2"> <!--div ligne boostrap header-->
+                    <div class="col-2">
+                        <div class="logo" src=# ></div>
+                    </div>
+                    <div class="col-5"></div>
+                    <div class="col-5 mb-2" >
+                        <h1>Le coin des musiciens</h1>
+                    </div>
+                </div>
+
+        <div th:replace="header :: top"></div> <!--Ajout du header-->
+        </header>
+        <br /><br />
+
+
+        <form method="GET" th:action="@{musicien/result}"> <!--methode get, à voir comment envoyer les données-->
+
+                <div class= "row mb-2 mt-2" > <!--div ligne boostrap choix multiple-->
+                <div class="col-3"> 
+                <legend>Instrument</legend>
+                <select name="instrument"> <!--Boucle à faire avec BDD-->
+                    <option>Guitare</option>
+                    <option>Flûte</option>
+                    <option>Baterie</option>
+                    <option>Basse</option>
+                    <option>Piano</option>
+                </select>
+                </div>
+
+                <div class="col-3">
+                <legend>Courant musical</legend>
+                <select name="Courant musical"> <!--Boucle à faire avec BDD-->
+                        <option>Rock</option>
+                        <option>Jazz</option>
+                        <option>Classique</option>
+                        <option>Electronique</option>
+                        <option>Latino</option>
+                    </select>
+                </div>
+
+                <div class="col-3">
+                <legend>Département</legend>
+                <select name="Département"> <!--Boucle à faire avec BDD-->
+                        <option>07 Ardèche</option>
+                        <option>37 Indre et Loire</option>
+                        <option>974 La Réunion</option>
+                        <option>53 La Mayenne</option>
+                    </select>
+                </div>
+            
+                <div class="col-3">
+                <legend>Niveau</legend>
+                <select name="Niveau"> <!--Boucle à faire avec BDD-->
+                        <option>Débutant</option>
+                        <option>Intermédiaire</option>
+                        <option>Confirmé</option>
+                        <option>Expert</option>
+                    </select>
+                </div>
+                </div>
+                <br /><br />
+                <br /><br />
+                <br /><br />
+                <br /><br />
+                    
+
+
+                <div class="row mt-5"> <!--div ligne boostrap bouton-->
+                <div class="col-7"></div>
+                <div class="col-4">   
+                    <div class="bouton">
+                        <input type="submit" value="Rechercher" id="rechercher" />
+                    </div>
+                </div>
+                </div>
+                <br /><br />
+        </form>
+        
+
+    
+    <footer th:replace="footer :: foot"></footer> <!--Ajout du footer-->
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+</body>
+</html>
