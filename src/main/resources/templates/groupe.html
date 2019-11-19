@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang = "fr" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{bootstrap.min.css}"></link> <!--import de boostrap-->
+    <link rel="stylesheet" th:href="@{Style.css}"></link>
+
+    <title>SoloToBand</title>
+</head>
+
+<body>
+   
+    <div class= container> <!--div page boostrap-->
+        <header>
+                <div class= "row mb-2"> <!--div ligne boostrap header-->
+                    <div class="col-2">
+                        <div class="logo" src=# ></div>
+                    </div>
+                    <div class="col-5"></div>
+                    <div class="col-5 mb-2" >
+                        <h1>Annonce des groupes</h1>
+                    </div>
+                </div>
+
+        <div th:replace="header :: top"></div> <!--Ajout du header-->
+        </header>
+        <br />
+        <form method="POST" action="/groupe/create"> <!--methode post pour enregistrer 
+                                                    les données et afficher la page de 
+                                                    feedback-->
+
+         <div class= "row mb-2 mt-2" > <!--div ligne boostrap -->
+            <div class="col-3"> 
+                <label for="nameGroupe">Nom du groupe:</label>
+                <input id="nameGroupe" name="nameGroupe" placeholder="Electronics Chewing Gum" required type="text">
+                <br><br>
+            </div>
+
+            <div class="col-3"> 
+                <label for="contactName">Nom du contact:</label>
+                <input id="contactName" name="contactName" placeholder="Richard" required type="text">
+                <br><br>
+            </div>
+
+            <div class="col-3"> 
+                <label for="groupPhone">Téléphone:</label>
+                <input id="groupPhone" name="groupPhone" placeholder="06xxxxxxxx" required type="tel">
+                <br><br>
+            </div>
+
+            <div class="col-3"> 
+                <label for="groupMail">Email:</label>
+                <input id="groupMail" name="groupMail" placeholder="Richard@gotainer.lol" required type="email">
+                <br><br>
+            </div>
+         </div>
+
+         <div class= "row mb-2 mt-2" >
+            <div class="col-3"> 
+                <label for="instrument">Instrument:</label>
+                <input id="instrument" name="instrument" placeholder="piano" required type="text">
+                <br><br>
+            </div>
+
+            <div class="col-3"> 
+                <label for="departement">Départment:</label>
+                <input id="departement" name="departement" placeholder="974" required type="text">
+                <br><br>
+            </div>
+
+            <div class="col-3"> 
+                <label for="musicFlux">Courant musical:</label>
+                <input id="musicFlux" name="musicFlux" placeholder="Grunge" required type="text">
+                <br><br>
+            </div>
+        
+            <div class="col-3">
+                <label for="level">niveau:</label>
+                <select id="level" name="level" required type="text">
+                        <option>Débutant</option>
+                        <option>Intermédiaire</option>
+                        <option>Confirmé</option>
+                        <option>Expert</option>
+                </select>
+            </div>
+         </div>
+         <div class= "row mb-2 mt-2" >
+            <div class="col-10"> 
+                <label for="groupInfo">Informations sur le groupe:</label>
+                <textarea class="form-control" id="groupInfo" rows="5" col="12" name="groupInfo" placeholder="Présentez votre groupe" required type="text"></textarea>
+            
+            </div>
+        </div>
+
+            <div class="row mt-5"> <!--div ligne boostrap bouton-->
+            <div class="col-5"></div>
+            <div class="col-4">   
+                <div class="bouton">
+                    <input type="submit" value="Enregistrer l'annonce">
+                </div>
+            </div>
+            </div>
+            <br /><br />
+    </form>
+        
+
+    
+    <footer th:replace="footer :: foot"></footer> <!--Ajout du footer-->
+    
+        <link rel="stylesheet" th:href="@{bootstrap.min.js}">
+        <link rel="stylesheet" th:href="@{jquery-3.4.1.min.js}">
+    </div>
+</body>
+</html>
