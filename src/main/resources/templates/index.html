@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> <!--import de boostrap-->
+    <link rel="stylesheet" th:href="@{sandstone.min.css}"></link>
+    <link rel="stylesheet" th:href="@{style.css}"></link>
+    <title>SoloToBand</title>
+</head>
+
+<body>
+    <div class= container> <!--div page boostrap-->
+        <header>
+                <div class= "row"> <!--div ligne boostrap header-->
+                    <div class="col-lg-2 col-4">
+                        <div class="logo" src=# ></div>
+                    </div>
+                    <div class="col-lg-3 col-1"></div>
+                    <div class="col-lg-7 col-7" >
+                        <h1>SoloToBand</h1>
+                    </div>
+                </div>
+                <div class= "row mb-5"> <!--fragment thymeleaf-->
+                    <div class="col-0 col-lg-2"></div>
+            
+                    <div class="col-12 col-lg-8 ">
+                        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                              <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarColor01">
+                              <ul class="navbar-nav">
+                                <li class="nav-item active mx-5">
+                                  <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item mx-4">
+                                  <a class="nav-link" href="#">Recherche de groupe</a>
+                                </li>
+                                <li class="nav-item ml-5 mr-4">
+                                  <a class="nav-link" href="#">Dépôt d'annonce</a>
+                                </li>
+                                <li class="nav-item ml-5 mr-4">
+                                  <a class="nav-link" href="#">Contacts</a>
+                                </li>
+                              </ul>
+                              
+                            </div>
+                          </nav>
+                    </div>
+                </div>
+        </header>
+
+        <h2>Bienvenue sur SoloToBand, le bon coin des zicos !</h2>
+
+        <br><br>
+        <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#why">Pourquoi ce site?</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#how">Comment utiliser ce site?</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#who">Qui sommes nous?</a>
+                </li>
+              </ul>
+
+              <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade active show" id="why">
+                  <p>Parce qu'il y en avait marre des sites surchargés de beaucoup de chose sauf de l'essentiel...
+                     Une interface simple et efficace pour trouver les personnes dont on a besoin et créer de nouvelles
+                     rencontres musicales.
+                  </p>
+                </div>
+                <div class="tab-pane fade" id="how">
+                  <p>Comme vous l'avez surement déjà compris, le site est très simple d'utilisation. On clique sur chercher un 
+                      groupe lorsque l'on est musicien et que l'on cherche un groupe. On lance la recherche et si vous ne trouvez 
+                      pas du premier coup, ce n'est pas grave, il reste d'autres options.</p>
+                <p>Si vous représenter un groupe et que vous cherchez un ou des musiciens, il vous suffit de cliquer sur le dépôt 
+                    d'annonce et de valider le formulaire. D'ici quelques temps, quelqu'un vous contactera.
+                </p>
+                </div>
+                <div class="tab-pane fade" id="who">
+                  <p>Nous sommes une petite équipe d'étudiants en développement web et ce site correspond à un de nos projets d'étude. 
+                      Nous sommes sympa, investi et mélo méli toutatti... En gros, on s'arrache pour vous fournir le meilleur service 
+                      qui soit.
+                  </p>
+                </div>
+              </div>
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+</body>
+</html>
