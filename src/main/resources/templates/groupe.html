@@ -27,26 +27,29 @@
         <div th:replace="header :: top"></div> <!--Ajout du header-->
         </header>
         <br />
-        <form method="POST" action="/groupe/create"> <!--methode post pour enregistrer 
+        <form method="POST" action="#" th:action="@{/groupe}" th:object="${groupe}"> <!--methode post pour enregistrer 
                                                     les données et afficher la page de 
                                                     feedback-->
 
          <div class= "row mb-2 mt-2" > <!--div ligne boostrap -->
             <div class="col-3"> 
+                <p th:if="${#fields.hasErrors('nameGroupe')}" th:errors="*{nameGroupe}" />
                 <label for="nameGroupe">Nom du groupe:</label>
-                <input id="nameGroupe" name="nameGroupe" placeholder="Electronics Chewing Gum" required type="text">
+                <input id="nameGroupe" name="nameGroupe" placeholder="Electronics Chewing Gum" required type="text" th:field="*{nameGroupe}">
                 <br><br>
             </div>
 
             <div class="col-3"> 
+                <p th:if="${#fields.hasErrors('contactName')}" th:errors="*{contactName}"/>
                 <label for="contactName">Nom du contact:</label>
-                <input id="contactName" name="contactName" placeholder="Richard" required type="text">
+                <input id="contactName" name="contactName" placeholder="Richard" required type="text" th:field="*{contactName}">
                 <br><br>
             </div>
 
-            <div class="col-3"> 
+            <div class="col-3">
+                <p th:if="${#fields.hasErrors('groupPhone')}" th:errors="*{groupPhone}"/>
                 <label for="groupPhone">Téléphone:</label>
-                <input id="groupPhone" name="groupPhone" placeholder="06xxxxxxxx" required type="tel">
+                <input id="groupPhone" name="groupPhone" placeholder="06xxxxxxxx" required type="tel" th:field="*{groupPhone}">
                 <br><br>
             </div>
 

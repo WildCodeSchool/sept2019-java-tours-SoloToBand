@@ -1,39 +1,39 @@
 package com.solotoband.controllers;
 
+import javax.validation.Valid;
+
+import com.solotoband.entity.Groupe;
 import com.solotoband.repository.GroupeRepository;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class GroupeController
 {
-    private GroupeRepository repository = new GroupeRepository();
-
+    GroupeRepository repository = new GroupeRepository();
     @GetMapping("/groupe")
-    public String groupe()
+    public String groupe(Model model)
     {
+        Groupe groupe= new Groupe();
+        model.addAttribute("groupe", groupe);
         return "groupe";
     } 
 
-    @PostMapping("/groupe/create")
-    public String postGroupe(
-        Model model,
-        @RequestParam String nameGroupe,
-        @RequestParam String contactName,
-        @RequestParam Long groupPhone,
-        @RequestParam String groupMail,
-        @RequestParam String groupInfo,
-        @RequestParam String instrument,
-        @RequestParam String musicFlux,
-        @RequestParam String level,
-        @RequestParam Long departement
-    ) {
-        model.addAttribute("groupe", repository.save(nameGroupe, 
-        contactName, groupPhone, groupMail, groupInfo, instrument, 
-        musicFlux, level, departement));
+    @PostMapping("/groupe")
+    public String postGroupe(@Valid Groupe groupe, BindingResult bindingResult, Model model) {
+        if (bindingResult.hasErrors())
+        {
+            return "groupe";
+        }
+        // Vérifier que l'enregistrement dans la base s'est bien passé
+        repository.createGroup(groupe);
+        // Rediriger vers une page d'erreur !
+        model.addAttribute("groupe", groupe);
+        
         return "annonceOk";
     }
 }

@@ -1,12 +1,20 @@
 package com.solotoband.entity;
+import javax.validation.constraints.*;
 
 public class Groupe 
 {
     // Déclaration des variables du constructeur
     private Long id;
+    @NotEmpty
+    @Size(min=1, max= 50, message="Nom trop grand")
+   // @Pattern(regexp = "^([a-zA-Z_0-9])$", message="Votre nom ne doit comporter que des lettres ou des chiffres")
     private String nameGroupe;
+    @NotEmpty
+    @Size(min=1, max= 50, message="Nom trop grand")
+   // @Pattern(regexp = "^(\\w)$", message="Vous nom ne doit comporter que des lettres ou des chiffres")    
     private String contactName;
-    private Long groupPhone;
+    @Size(min=10, max= 10, message="Votre numéro doit comporter 10 chiffres")
+    private String groupPhone;
     private String groupMail;
     private String groupInfo;
     private String instrument;
@@ -15,8 +23,12 @@ public class Groupe
     private Long departement;
 
     // Constructeur du groupe
+    public Groupe(){
+
+    }
+
     public Groupe(Long id, String nameGroupe, String contactName, 
-    Long groupPhone, String groupMail, String groupInfo, String instrument, 
+    String groupPhone, String groupMail, String groupInfo, String instrument, 
     String musicFlux, String level, Long departement) 
     {
         this.id = id;
@@ -63,12 +75,12 @@ public class Groupe
         this.contactName = contactName;
     }
 
-    public Long getGroupPhone() 
+    public String getGroupPhone() 
     {
         return this.groupPhone;
     }
 
-    public void setGroupPhone(Long groupPhone) 
+    public void setGroupPhone(String groupPhone) 
     {
         this.groupPhone = groupPhone;
     }
@@ -151,7 +163,7 @@ public class Groupe
         return this;
     }
 
-    public Groupe groupPhone(Long groupPhone) 
+    public Groupe groupPhone(String groupPhone) 
     {
         this.groupPhone = groupPhone;
         return this;

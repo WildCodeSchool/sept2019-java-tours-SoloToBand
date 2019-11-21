@@ -11,9 +11,7 @@ public class GroupeRepository {
     private final static String DB_PASSWORD = "annsolo";
 
     // Fonction save qui prend en paramètre les attribus du constructeur
-    public Groupe save(String nameGroupe, String contactName, 
-    Long groupPhone, String groupMail, String groupInfo, String instrument, 
-    String musicFlux, String level, Long departement) 
+    public boolean createGroup(Groupe groupe) 
     {
         // Connection à la DB grâce aux indentifiants de l'user crée
         try {
@@ -28,15 +26,15 @@ public class GroupeRepository {
                 Statement.RETURN_GENERATED_KEYS
             );
 
-            statement.setString(1, nameGroupe);
-            statement.setString(2, contactName);
-            statement.setLong(3, groupPhone);
-            statement.setString(4,groupMail);
-            statement.setString(5, groupInfo);
-            statement.setString(6, instrument);
-            statement.setString(7, musicFlux);
-            statement.setString(8, level);
-            statement.setLong(9, departement); // 1h de recherche sur ce parametre 9...
+            statement.setString(1, groupe.getNameGroupe());
+            statement.setString(2, groupe.getContactName());
+            statement.setString(3, groupe.getGroupPhone());
+            statement.setString(4, groupe.getGroupMail());
+            statement.setString(5, groupe.getGroupInfo());
+            statement.setString(6, groupe.getInstrument());
+            statement.setString(7, groupe.getMusicFlux());
+            statement.setString(8, groupe.getLevel());
+            statement.setLong(9, groupe.getDepartement());
 
             // condition si l'execution de l'instruction SQL ne réussi pas.
             if (statement.executeUpdate() != 1) 
@@ -47,12 +45,12 @@ public class GroupeRepository {
             // déclaration et attribution de la variable qui récupère l'id.
             ResultSet generatedKeys = statement.getGeneratedKeys();
 
-            // Si l'on a un id, appel au constructeur afin de générer un objet groupe.
+            // Si l'on a un id, appel au constructeur afin de générer un objet groupe pour la db.
             if (generatedKeys.next()) 
             {
                 Long id = generatedKeys.getLong(1);
-                return new Groupe(id, nameGroupe, contactName, groupPhone, groupMail,
-                        groupInfo, instrument, musicFlux, level, departement);
+                groupe.setId(id); // Ajout de l'id dans l'objet
+                return  true;
             } else 
             {
                 throw new SQLException("failed to get inserted id");
@@ -61,6 +59,6 @@ public class GroupeRepository {
             {
                 e.printStackTrace();
             }
-        return null;
+        return false;
     }
 }
