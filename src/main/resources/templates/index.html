@@ -16,49 +16,23 @@
 </head>
 
 <body>
+
   <div class=container>
     <!--div page boostrap-->
     <header>
       <div class="row">
         <!--div ligne boostrap header-->
-        <div class="col-lg-2 col-4">
-          <div class="logo"></div>
+        <div class="col-lg-2 col-2">
+          <div class="logo" src="#"></div>
         </div>
-        <div class="col-lg-3 col-1"></div>
+        <div class="col-lg-2 col-1"></div>
         <div class="col-lg-7 col-7">
-          <h1>SoloToBand</h1>
+          <h1 class="tirtre-index">SoloToBand</h1>
         </div>
       </div>
-      <div class="row mb-5">
-        <!--fragment thymeleaf-->
-        <div class="col-0 col-lg-2"></div>
 
-        <div class="col-12 col-lg-8 ">
-          <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
-              aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarColor01">
-              <ul class="navbar-nav">
-                <li class="nav-item active mx-5">
-                  <a class="nav-link" href="/">Accueil <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item mx-4">
-                  <a class="nav-link" href="/musicien">Recherche de groupe</a>
-                </li>
-                <li class="nav-item ml-5 mr-4">
-                  <a class="nav-link" href="/groupe">Dépôt d'annonce</a>
-                </li>
-                <li class="nav-item ml-5 mr-4">
-                  <a class="nav-link" href="#">Contacts</a>
-                </li>
-              </ul>
+      <div th:replace="header :: top"></div>
 
-            </div>
-          </nav>
-        </div>
-      </div>
     </header>
 
     <h2>Bienvenue sur SoloToBand, le bon coin des zicos !</h2>
@@ -103,6 +77,17 @@
         </div>
       </div>
     </div>
+    <br>
+    <br><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -114,10 +99,9 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 </body>
+<footer th:replace="footer :: foot">
+  <!--départ fragment importation-->
 
-<br>
-<br>
-
-<footer th:replace="footer :: foot"></footer>
+</footer>
 
 </html>

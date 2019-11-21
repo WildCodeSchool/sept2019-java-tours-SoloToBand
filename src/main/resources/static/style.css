@@ -1,0 +1,55 @@
+.footer {
+    background: #222222 none repeat scroll 0 0;
+    padding: 20px;
+    margin-top: 2%;
+
+}
+
+
+.footer_dv a {
+    color: #fff;
+
+}
+
+.tirtre-index {
+    text-align: right;
+}
+
+.logo {
+    background: grey;
+    height: 120px;
+
+}
+
+
+header {
+    margin-top: 2%;
+
+}
+
+.image-resultat-groupe {
+    height: 40px;
+
+}
+
+.tab-pane>p {
+    margin: 2%;
+    font-size: large;
+}
+
+.header {
+    background-color: #3E3F3A !important;
+
+}
+
+
+@media (max-width: 700px) {
+    .logo {
+        height: 80px;
+    }
+
+    .footer {
+        margin: auto;
+    }
+
+}
