@@ -54,28 +54,32 @@
             </div>
 
             <div class="col-3"> 
+                <p th:if="${#fields.hasErrors('groupMail')}" th:errors="*{groupMail}"/>
                 <label for="groupMail">Email:</label>
-                <input id="groupMail" name="groupMail" placeholder="Richard@gotainer.lol" required type="email">
+                <input id="groupMail" name="groupMail" placeholder="Richard@gotainer.lol" required type="email" th:field="*{groupMail}">
                 <br><br>
             </div>
          </div>
 
          <div class= "row mb-2 mt-2" >
             <div class="col-3"> 
+                <p th:if="${#fields.hasErrors('instrument')}" th:errors="*{instrument}"/>
                 <label for="instrument">Instrument:</label>
-                <input id="instrument" name="instrument" placeholder="piano" required type="text">
+                <input id="instrument" name="instrument" placeholder="piano" required type="text" th:field="*{instrument}">
                 <br><br>
             </div>
 
-            <div class="col-3"> 
+            <div class="col-3">
+                <p th:if="${#fields.hasErrors('departement')}" th:errors="*{departement}"/>
                 <label for="departement">Départment:</label>
-                <input id="departement" name="departement" placeholder="974" required type="text">
+                <input id="departement" name="departement" placeholder="974" required type="text" th:field="*{departement}">
                 <br><br>
             </div>
 
-            <div class="col-3"> 
+            <div class="col-3">
+                <p th:if="${#fields.hasErrors('musicFlux')}" th:errors="*{musicFlux}"/>
                 <label for="musicFlux">Courant musical:</label>
-                <input id="musicFlux" name="musicFlux" placeholder="Grunge" required type="text">
+                <input id="musicFlux" name="musicFlux" placeholder="Grunge" required type="text" th:field="*{musicFlux}">
                 <br><br>
             </div>
         
@@ -91,8 +95,9 @@
          </div>
          <div class= "row mb-2 mt-2" >
             <div class="col-10"> 
+                <p th:if="${#fields.hasErrors('groupInfo')}" th:errors="*{groupInfo}"/>
                 <label for="groupInfo">Informations sur le groupe:</label>
-                <textarea class="form-control" id="groupInfo" rows="5" col="12" name="groupInfo" placeholder="Présentez votre groupe" required type="text"></textarea>
+                <textarea class="form-control" id="groupInfo" rows="5" col="12" name="groupInfo" placeholder="Présentez votre groupe" required type="text" th:field="*{groupInfo}"></textarea>
             
             </div>
         </div>
