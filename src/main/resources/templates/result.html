@@ -1,93 +1,173 @@
 <!DOCTYPE html>
 <html lang="fr" xmlns:th="https://www.thymeleaf.org/">
+
 <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> <!--import de boostrap-->
-    <link rel="stylesheet" th:href="@{sandstone.min.css}"></link>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--import de boostrap-->
+    <link rel="stylesheet" th:href="@{sandstone.min.css}">
+    </link>
+    <link rel="stylesheet" th:href="@{style.css}">
+    </link>
     <title>SoloToBand</title>
 </head>
+
 
 <body>
 
     <div class=container>
         <!--div page boostrap-->
         <header>
-                <div class= "row mb-2"> <!--div ligne boostrap header-->
-                    <div class="col-2">
-                        <div class="logo" src=# ></div>
-                    </div>
-                    <div class="col-5"></div>
-                    <div class="col-5 mb-2" >
-                        <h1>Résultats de recherche</h1>
-                    </div>
-                </div>
-        <div th:replace="header :: top"></div> <!--Ajout du header-->
-        </header>
-        <br />
+            <div class="row">
+              <!--div ligne boostrap header-->
+              <div class="col-lg-2 col-2">
+                <img class="logo" th:src="@{logo.png}"></img>
+              </div>
+              <div class="col-lg-2 col-1"></div>
+              <div class="col-lg-7 col-7">
+                <h1 class="tirtre-index">Résultat de recherche</h1>
+              </div>
+            </div>
+      
+            <div th:replace="header :: top"></div>
+      
+          </header>
+      
         <br />
         <br />
 
         <div class="container">
+
             <section>
                 <div class="row">
-
-                    <img  class= "image-resultat-groupe" hf:src="@{https://slack-redir.net/link?url=https%3A%2F%2Fpicsum.photos%2Fseed%2Fpicsum%2F200%2F300}">
-                    <div class="col">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam necessitatibus suscipit,
+                    <div class="col-lg-0">
+                        <img class="image-resultat-groupe" src="https://picsum.photos/seed/picsum/200/300">
+                    </div>
+                    <div class="col-lg-8">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam necessitatibus
+                            suscipit,
                             aliquam
                             sed
                             aspernatur distinctio ex laudantium perspiciatis magni possimus optio animi? Ducimus
                             temporibus
                             atque quia
                             nulla! Amet, esse porro.</p>
+
                     </div>
+                    <div class="col-lg-8">
+                        <div class="row">
+                            <div class="col">
+                                <a>Nom de groupe: Solotooband </a>
+                            </div>
+                            <div class="col-6">
+                                <a>Nom du contact: Big Band Hasard </a>
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="col">
+                                <a>Phone : </a>
+                            </div>
+                            <div class="col-6">
+                                <a>@: </a>
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="col">
+                                <a>instrument search: </a>
+                            </div>
+                            <div class="col-6">
+                                <a>Style search: </a>
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="col">
+                                <a>Departement : </a>
+                            </div>
+                            <div class="col-6">
+                                <a>Level: </a>
+                            </div>
+                        </div>
 
-                    <img  class= "image-resultat-groupe" hf:src="@{https://slack-redir.net/link?url=https%3A%2F%2Fpicsum.photos%2Fseed%2Fpicsum%2F200%2F300}">
+                    </div>
+                </div>
+            </section>
 
-                    <div class="col-6">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, perspiciatis commodi
-                            explicabo
-                            provident nulla deleniti maiores sed! Iure odio ipsum quisquam. Nam aut esse sunt,
-                            architecto
-                            voluptate ex est repellat!</p>
+
+            <br>
+            <br>
+            <br>
+            <section>
+                <div class="row">
+                    <div class="col-lg-0">
+                        <img class="image-resultat-groupe" src="https://picsum.photos/seed/picsum/200/300">
+                    </div>
+                    <div class="col-lg-8">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam necessitatibus
+                            suscipit,
+                            aliquam
+                            sed
+                            aspernatur distinctio ex laudantium perspiciatis magni possimus optio animi? Ducimus
+                            temporibus
+                            atque quia
+                            nulla! Amet, esse porro.</p>
+
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row">
+                            <div class="col">
+                                <a>Nom de groupe: Solotooband </a>
+                            </div>
+                            <div class="col-6">
+                                <a>Nom du contact: Big Band Hasard </a>
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="col">
+                                <a>Phone : </a>
+                            </div>
+                            <div class="col-6">
+                                <a>@: </a>
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="col">
+                                <a>instrument search: </a>
+                            </div>
+                            <div class="col-6">
+                                <a>Style search: </a>
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="col">
+                                <a>Departement : </a>
+                            </div>
+                            <div class="col-6">
+                                <a>Level: </a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
-                <div class="row mt-5">
-                    <img  class= "image-resultat-groupe" hf:src="@{https://slack-redir.net/link?url=https%3A%2F%2Fpicsum.photos%2Fseed%2Fpicsum%2F200%2F300}">
-                    <div class="col">
-
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci ducimus vel dolores ipsa
-                            rem,
-                            tenetur
-                            soluta quos amet saepe eligendi ab inventore, explicabo sit animi cupiditate illo atque
-                            accusantium
-                            perferendis.</p>
-
-                    </div>
-                    <img  class= "image-resultat-groupe" hf:src="@{https://slack-redir.net/link?url=https%3A%2F%2Fpicsum.photos%2Fseed%2Fpicsum%2F200%2F300}">
-                    <div class="col-6">
-
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati consequatur culpa
-                            reiciendis
-                            voluptate
-                            quos tenetur illum earum doloremque accusantium a harum iusto, nobis laboriosam deserunt
-                            hic,
-                            dolorum
-                            ducimus quod delectus!</p>
-                    </div>
-                </div>
 
             </section>
+       
+
+        <br>
+        <br>
+
+        <footer th:replace="footer :: foot"></footer>
+        <!--Ajout du footer-->
         </div>
 
-        <footer th:replace="footer :: foot"></footer> <!--Ajout du footer-->
-    </div>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
 </body>
+
+
 </html>

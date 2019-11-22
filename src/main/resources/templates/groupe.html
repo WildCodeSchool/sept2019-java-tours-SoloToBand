@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> <!--import de boostrap-->
     <link rel="stylesheet" th:href="@{sandstone.min.css}"></link>
+    <link rel="stylesheet" th:href="@{style.css}"></link>
+
 
     <title>SoloToBand</title>
 </head>
@@ -14,15 +16,16 @@
    
     <div class= container> <!--div page boostrap-->
         <header>
-                <div class= "row mb-2"> <!--div ligne boostrap header-->
-                    <div class="col-2">
-                        <div class="logo" src=# ></div>
-                    </div>
-                    <div class="col-5"></div>
-                    <div class="col-5 mb-2" >
-                        <h1>Annonce des groupes</h1>
-                    </div>
-                </div>
+            <div class="row">
+              <!--div ligne boostrap header-->
+              <div class="col-lg-2 col-2">
+                <img class="logo" th:src="@{logo.png}"></img>
+              </div>
+              <div class="col-lg-2 col-1"></div>
+              <div class="col-lg-7 col-7">
+                <h1 class="tirtre-index">Annonce des musiciens</h1>
+              </div>
+            </div>
 
         <div th:replace="header :: top"></div> <!--Ajout du header-->
         </header>
@@ -41,21 +44,21 @@
             </div>
 
             <div class="col-3"> 
-                <p th:if="${#fields.hasErrors('contactName')}" th:errors="*{contactName}"/>
+                <p class="validation" th:if="${#fields.hasErrors('contactName')}" th:errors="*{contactName}"/>
                 <label for="contactName">Nom du contact:</label>
                 <input id="contactName" name="contactName" placeholder="Richard" required type="text" th:field="*{contactName}">
                 <br><br>
             </div>
 
             <div class="col-3">
-                <p th:if="${#fields.hasErrors('groupPhone')}" th:errors="*{groupPhone}"/>
+                <p class="validation" th:if="${#fields.hasErrors('groupPhone')}" th:errors="*{groupPhone}"/>
                 <label for="groupPhone">Téléphone:</label>
                 <input id="groupPhone" name="groupPhone" placeholder="06xxxxxxxx" required type="tel" th:field="*{groupPhone}">
                 <br><br>
             </div>
 
             <div class="col-3"> 
-                <p th:if="${#fields.hasErrors('groupMail')}" th:errors="*{groupMail}"/>
+                <p class="validation" th:if="${#fields.hasErrors('groupMail')}" th:errors="*{groupMail}"/>
                 <label for="groupMail">Email:</label>
                 <input id="groupMail" name="groupMail" placeholder="Richard@gotainer.lol" required type="email" th:field="*{groupMail}">
                 <br><br>
@@ -64,21 +67,21 @@
 
          <div class= "row mb-2 mt-2" >
             <div class="col-3"> 
-                <p th:if="${#fields.hasErrors('instrument')}" th:errors="*{instrument}"/>
+                <p class="validation" th:if="${#fields.hasErrors('instrument')}" th:errors="*{instrument}"/>
                 <label for="instrument">Instrument:</label>
                 <input id="instrument" name="instrument" placeholder="piano" required type="text" th:field="*{instrument}">
                 <br><br>
             </div>
 
             <div class="col-3">
-                <p th:if="${#fields.hasErrors('departement')}" th:errors="*{departement}"/>
+                <p class="validation" th:if="${#fields.hasErrors('departement')}" th:errors="*{departement}"/>
                 <label for="departement">Départment:</label>
                 <input id="departement" name="departement" placeholder="974" required type="text" th:field="*{departement}">
                 <br><br>
             </div>
 
             <div class="col-3">
-                <p th:if="${#fields.hasErrors('musicFlux')}" th:errors="*{musicFlux}"/>
+                <p class="validation" th:if="${#fields.hasErrors('musicFlux')}" th:errors="*{musicFlux}"/>
                 <label for="musicFlux">Courant musical:</label>
                 <input id="musicFlux" name="musicFlux" placeholder="Grunge" required type="text" th:field="*{musicFlux}">
                 <br><br>
@@ -96,7 +99,7 @@
          </div>
          <div class= "row mb-2 mt-2" >
             <div class="col-10"> 
-                <p th:if="${#fields.hasErrors('groupInfo')}" th:errors="*{groupInfo}"/>
+                <p class="validation" th:if="${#fields.hasErrors('groupInfo')}" th:errors="*{groupInfo}"/>
                 <label for="groupInfo">Informations sur le groupe:</label>
                 <textarea class="form-control" id="groupInfo" rows="5" col="12" name="groupInfo" placeholder="Présentez votre groupe" required type="text" th:field="*{groupInfo}"></textarea>
             
@@ -115,9 +118,9 @@
     </form>
         
 
-    </div>
+   
     <footer th:replace="footer :: foot"></footer> <!--Ajout du footer-->
-    
+     </div>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

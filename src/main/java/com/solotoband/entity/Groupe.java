@@ -7,12 +7,12 @@ public class Groupe
     private Long id;
     @NotEmpty
     @Size(min=1, max= 50, message="Nom trop grand")
-    @Pattern(regexp = "^[a-zéèà'.A-Z0-9]*$", message="Le nom ne doit pas comporter de caractères spéciaux")
+    @Pattern(regexp = "^[a-zéèà' .A-Z0-9]*$", message="Le nom ne doit pas comporter de caractères spéciaux")
     private String nameGroupe;
 
     @NotEmpty
     @Size(min=1, max= 50, message="Nom trop grand")
-    @Pattern(regexp = "^[a-zéèà'.A-Z0-9]*$", message="Vous nom ne doit comporter que des lettres ou des chiffres")    
+    @Pattern(regexp = "^[a-zéèàûê' .A-Z0-9]*$", message="Vous nom ne doit comporter que des lettres ou des chiffres")    
     private String contactName;
 
     @NotEmpty
@@ -25,11 +25,11 @@ public class Groupe
     private String groupMail;
 
     @NotEmpty
-    @Pattern(regexp = "^[a-z-.A-Z0-9]*$", message="Vous utilisez des caractères non valides. Les valides sont(des lettres @ _ - . des chiffres)")
+    @Pattern(regexp = "^[a-zéèàûê' .A-Z0-9]*$", message="Vous utilisez des caractères non valides.")
     private String groupInfo;
 
     @NotEmpty
-    @Pattern(regexp = "^[a-z-.A-Z0-9]*$", message="Vous utilisez des caractères non valides")
+    @Pattern(regexp = "^[a-zéèàûê'.A-Z]*$", message="Vous utilisez des caractères non valides")
     private String instrument;
 
     @NotEmpty
