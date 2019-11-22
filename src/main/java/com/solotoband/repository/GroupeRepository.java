@@ -11,7 +11,7 @@ public class GroupeRepository {
     private final static String DB_PASSWORD = "annsolo";
 
     // Fonction save qui prend en paramètre les attribus du constructeur
-    public boolean createGroup(Groupe groupe) 
+    public static boolean createGroup(Groupe groupe) 
     {
         // Connection à la DB grâce aux indentifiants de l'user crée
         try {
@@ -39,7 +39,8 @@ public class GroupeRepository {
             // condition si l'execution de l'instruction SQL ne réussi pas.
             if (statement.executeUpdate() != 1) 
             {
-                throw new SQLException("failed to insert data");
+                //throw new SQLException("failed to insert data");
+                return false;
             }
 
             // déclaration et attribution de la variable qui récupère l'id.
@@ -53,12 +54,12 @@ public class GroupeRepository {
                 return  true;
             } else 
             {
-                throw new SQLException("failed to get inserted id");
+                //throw new SQLException("failed to get inserted id");
+                return false;
             }
         } catch (SQLException e) 
             {
-                e.printStackTrace();
+                return false;
             }
-        return false;
     }
 }

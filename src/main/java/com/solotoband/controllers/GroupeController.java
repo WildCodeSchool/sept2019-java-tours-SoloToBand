@@ -29,11 +29,12 @@ public class GroupeController
         {
             return "groupe";
         }
-        // Vérifier que l'enregistrement dans la base s'est bien passé
-        repository.createGroup(groupe);
-        // Rediriger vers une page d'erreur !
-        model.addAttribute("groupe", groupe);
-        
-        return "annonceOk";
+       
+        if (GroupeRepository.createGroup(groupe)){
+            model.addAttribute("groupe", groupe);
+            return "annonceOk";
+        }
+
+        return "erreur";
     }
 }
