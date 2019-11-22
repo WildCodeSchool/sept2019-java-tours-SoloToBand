@@ -3,7 +3,7 @@ import javax.validation.constraints.*;
 
 public class Groupe 
 {
-    // Déclaration des variables du constructeur
+    // Déclaration des variables du constructeur et des validateurs
     private Long id;
     @NotEmpty
     @Size(min=1, max= 50, message="Nom trop grand")
@@ -43,7 +43,7 @@ public class Groupe
     @NotNull
     private Long departement;
 
-    // Constructeur du groupe
+    // Constructeurs du groupe
     public Groupe(){
 
     }

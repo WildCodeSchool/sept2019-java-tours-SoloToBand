@@ -34,6 +34,7 @@
          <div class= "row mb-2 mt-2" > <!--div ligne boostrap -->
             <div class="col-3"> 
                 <p th:if="${#fields.hasErrors('nameGroupe')}" th:errors="*{nameGroupe}" />
+                 <!--syntaxe thymeleaf pour les validateurs -->
                 <label for="nameGroupe">Nom du groupe:</label>
                 <input id="nameGroupe" name="nameGroupe" placeholder="Electronics Chewing Gum" required type="text" th:field="*{nameGroupe}">
                 <br><br>
@@ -102,7 +103,7 @@
             </div>
         </div>
 
-            <div class="row mt-5"> <!--div ligne boostrap bouton-->
+            <div class="row mt-5"> <!--bouton-->
             <div class="col-5"></div>
             <div class="col-4">   
                 <div class="bouton">
