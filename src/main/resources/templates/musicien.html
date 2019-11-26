@@ -36,7 +36,6 @@
         </header>
         <br /><br />
 
-
         <form method="GET" th:action="@{musicien/result}">
             <!--methode get, à voir comment envoyer les données-->
 
@@ -58,6 +57,7 @@
                     <legend>Courant musical</legend>
                     <select name="Courant musical">
                         <!--Boucle à faire avec BDD-->
+
                         <option>Rock</option>
                         <option>Jazz</option>
                         <option>Classique</option>
@@ -67,9 +67,11 @@
                 </div>
 
                 <div class="col-3">
+
                     <legend>Département</legend>
                     <select name="Département">
                         <!--Boucle à faire avec BDD-->
+                      
                         <option>07 Ardèche</option>
                         <option>37 Indre et Loire</option>
                         <option>974 La Réunion</option>
@@ -77,16 +79,19 @@
                     </select>
                 </div>
 
+
                 <div class="col-3">
                     <legend>Niveau</legend>
                     <select name="Niveau">
                         <!--Boucle à faire avec BDD-->
+
                         <option>Débutant</option>
                         <option>Intermédiaire</option>
                         <option>Confirmé</option>
                         <option>Expert</option>
                     </select>
                 </div>
+
             </div>
             <br /><br />
             <br /><br />
