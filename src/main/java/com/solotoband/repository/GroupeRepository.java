@@ -54,7 +54,6 @@ public class GroupeRepository {
                 return  true;
             } else 
             {
-                //throw new SQLException("failed to get inserted id");
                 return false;
             }
         } catch (SQLException e) 
