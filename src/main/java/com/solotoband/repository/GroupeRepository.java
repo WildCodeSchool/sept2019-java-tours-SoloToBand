@@ -39,7 +39,7 @@ public class GroupeRepository {
             // condition si l'execution de l'instruction SQL ne réussi pas.
             if (statement.executeUpdate() != 1) 
             {
-                //throw new SQLException("failed to insert data");
+                
                 return false;
             }
 
