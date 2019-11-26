@@ -34,7 +34,7 @@ public class GroupeRepository {
             statement.setString(6, groupe.getInstrument());
             statement.setString(7, groupe.getMusicFlux());
             statement.setString(8, groupe.getLevel());
-            statement.setLong(9, groupe.getDepartement());
+            statement.setString(9, groupe.getDepartement());
 
             // condition si l'execution de l'instruction SQL ne réussi pas.
             if (statement.executeUpdate() != 1) 

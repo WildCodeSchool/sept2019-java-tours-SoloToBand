@@ -33,14 +33,18 @@
         <form method="POST" action="#" th:action="@{/groupe}" th:object="${groupe}"> <!--methode post pour enregistrer 
                                                     les données et afficher la page de 
                                                     feedback-->
+                    
+
+
 
          <div class= "row mb-2 mt-2" > <!--div ligne boostrap -->
             <div class="col-3"> 
-                <p th:if="${#fields.hasErrors('nameGroupe')}" th:errors="*{nameGroupe}" />
-                 <!--syntaxe thymeleaf pour les validateurs -->
-                <label for="nameGroupe">Nom du groupe:</label>
-                <input id="nameGroupe" name="nameGroupe" placeholder="Electronics Chewing Gum" required type="text" th:field="*{nameGroupe}">
-                <br><br>
+                <div class="form-group">
+                    <label for="nameGroupe">Nom du groupe</label>
+                    <p th:if="${#fields.hasErrors('nameGroupe')}" th:errors="*{nameGroupe}" />
+                <input id="nameGroupe" name="nameGroupe" placeholder="Wildy rocks" required type="text" th:field="*{nameGroupe}">
+                    
+                </div>
             </div>
 
             <div class="col-3"> 
@@ -52,14 +56,14 @@
 
             <div class="col-3">
                 <p class="validation" th:if="${#fields.hasErrors('groupPhone')}" th:errors="*{groupPhone}"/>
-                <label for="groupPhone">Téléphone:</label>
+                <label for="groupPhone">Téléphone:</label><br>
                 <input id="groupPhone" name="groupPhone" placeholder="06xxxxxxxx" required type="tel" th:field="*{groupPhone}">
                 <br><br>
             </div>
 
             <div class="col-3"> 
                 <p class="validation" th:if="${#fields.hasErrors('groupMail')}" th:errors="*{groupMail}"/>
-                <label for="groupMail">Email:</label>
+                <label for="groupMail">Email:</label><br>
                 <input id="groupMail" name="groupMail" placeholder="Richard@gotainer.lol" required type="email" th:field="*{groupMail}">
                 <br><br>
             </div>
@@ -68,15 +72,117 @@
          <div class= "row mb-2 mt-2" >
             <div class="col-3"> 
                 <p class="validation" th:if="${#fields.hasErrors('instrument')}" th:errors="*{instrument}"/>
-                <label for="instrument">Instrument:</label>
-                <input id="instrument" name="instrument" placeholder="piano" required type="text" th:field="*{instrument}">
+                <label for="instrument">Instrument:</label><br>
+                <input id="instrument" name="instrument" th:field="*{instrument}" placeholder="Piano">
+            </select>
                 <br><br>
             </div>
 
             <div class="col-3">
                 <p class="validation" th:if="${#fields.hasErrors('departement')}" th:errors="*{departement}"/>
                 <label for="departement">Départment:</label>
-                <input id="departement" name="departement" placeholder="974" required type="text" th:field="*{departement}">
+                <select id="departement" name="departement" th:field="*{departement}">
+                        <option value="01">01-Ain</option><br/>
+                        <option value="02">02-Aisne</option><br/>
+                        <option value="03">03-Allier</option><br/>
+                        <option value="04">04-Alpes de haute provence</option><br/>
+                        <option value="05">05-Hautes alpes</option><br/>
+                        <option value="06">06-Alpes maritimes</option><br/>
+                        <option value="07">07-Ardèche</option><br/>
+                        <option value="08">08-Ardennes</option><br/>
+                        <option value="09">09-Ariège</option><br/>
+                        <option value="10">10-Aube</option><br/>
+                        <option value="11">11-Aude</option><br/>
+                        <option value="12">12-Aveyron</option><br/>
+                        <option value="13">13-Bouches du rhône</option><br/>
+                        <option value="14">14-Calavados</option><br/>
+                        <option value="15">15-Cantal</option><br/>
+                        <option value="16">16-Charente</option><br/>
+                        <option value="17">17-Charente maritimes</option><br/>
+                        <option value="18">18-Cher</option><br/>
+                        <option value="19">19-Corrèze</option><br/>
+                        <option value="2A">2A-Corse du sud</option><br/>
+                        <option value="2B">2B-Haute corse</option><br/>
+                        <option value="21">21-Côte d'or</option><br/>
+                        <option value="22">22-Côtes d'armor</option><br/>
+                        <option value="23">23-Creuse</option><br/>
+                        <option value="24">24-Dordogne</option><br/>
+                        <option value="25">25-Doubs</option><br/>
+                        <option value="26">26-Drôme</option><br/>
+                        <option value="27">27-Eure</option><br/>
+                        <option value="28">28-Eure et loire</option><br/>
+                        <option value="29">29-Finistère</option><br/>
+                        <option value="30">30-Gard</option><br/>
+                        <option value="31">31-Haute garonne</option><br/>
+                        <option value="32">32-Gers</option><br>
+                        <option value="33">33-Gironde</option><br/>
+                        <option value="34">34-Hérault</option><br/>
+                        <option value="35">35-Ille et vilaine</option><br/>
+                        <option value="36">36-Indre</option><br/>
+                        <option value="37">37-Indre et loire</option><br/>
+                        <option value="38">38-Isère</option><br/>
+                        <option value="39">39-Jura</option><br/>
+                        <option value="40">40-Landes</option><br/>
+                        <option value="41">41-Loire et cher</option><br/>
+                        <option value="42">42-Loire</option><br/>
+                        <option value="43">43-haute loire</option><br/>
+                        <option value="44">44-Loire atlantique</option><br/>
+                        <option value="45">45-Loiret</option><br/>
+                        <option value="46">46-Lot</option><br/>
+                        <option value="47">47-Lot et garonne</option><br/>
+                        <option value="48">48-Lozère</option><br/>
+                        <option value="49">49-Maine et loire</option><br/>
+                        <option value="50">50-Manche</option><br/>
+                        <option value="51">51-marne</option><br/>
+                        <option value="52">52-Haute marne</option><br/>
+                        <option value="53">53-Mayenne</option><br/>
+                        <option value="54">54-meurthe et moselle</option><br/>
+                        <option value="55">55-Meuse</option><br/>
+                        <option value="56">56-Morbihan</option><br/>
+                        <option value="57">57-Moselle</option><br/>
+                        <option value="58">58-Nièvre</option><br/>
+                        <option value="59">59-Nord</option><br/>
+                        <option value="60">60-Oise</option><br/>
+                        <option value="61">61-Orne</option><br/>
+                        <option value="62">62-Pas de calais</option><br/>
+                        <option value="63">63-puy de dôme</option><br/>
+                        <option value="64">64-Pyrénées atlantiques</option><br/>
+                        <option value="65">65-Hautes pyrénées</option><br/>
+                        <option value="66">66-Pyrénées orientales</option><br/>
+                        <option value="67">67-Bas rhin</option><br/>
+                        <option value="68">68-Haut rhin</option><br/>
+                        <option value="69">69-Rhône</option><br/>
+                        <option value="70">70-Haute-saône</option><br/>
+                        <option value="71">71-Saône et loire</option><br/>
+                        <option value="72">72-Sarthe</option><br/>
+                        <option value="73">73-Savoie</option><br/>
+                        <option value="74">74-Haute savoie</option><br/>
+                        <option value="75">75-Paris</option><br/>
+                        <option value="76">76-Seine maritime</option><br/>
+                        <option value="77">77-Seine et marne</option><br/>
+                        <option value="78">78-Yvelines</option><br/>
+                        <option value="79">79-Deux sèvres</option><br/>
+                        <option value="80">80-Somme</option><br/>
+                        <option value="81">81-tarn</option><br/>
+                        <option value="82">82-Tarn et garonne</option><br/>
+                        <option value="83">83-Var</option><br/>
+                        <option value="84">84-Vaucluse</option><br/>
+                        <option value="85">85-Vendée</option><br/>
+                        <option value="86">86-Vienne</option><br/>
+                        <option value="87">87-Haute vienne</option><br/>
+                        <option value="88">88-Vosges</option><br/>
+                        <option value="89">89-Yonne</option><br/>
+                        <option value="90">90-Territoire de belfort</option><br/>
+                        <option value="91">91-Essonne</option><br/>
+                        <option value="92">92-Hauts de seine</option><br/>
+                        <option value="93">93-Seine st denis</option><br/>
+                        <option value="94">94-Val de marne</option><br/>
+                        <option value="95">95-Val d'oise</option><br/>
+                        <option value="971">971-Guadeloupe</option><br/>
+                        <option value="972">972-Martinique</option><br/>
+                        <option value="973">973-Guyane</option><br/>
+                        <option value="974">974-réunion</option><br/>
+                        </select>
                 <br><br>
             </div>
 

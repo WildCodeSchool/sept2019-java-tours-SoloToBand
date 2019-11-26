@@ -27,19 +27,20 @@ public class Groupe
     private String groupInfo;
 
     @NotEmpty
-    @Pattern(regexp = "^[a-zéèàûê'.A-Z]*$", message="Vous utilisez des caractères non valides")
+    @Size(min=1, max= 50, message="Nom trop grand")
     private String instrument;
 
     @NotEmpty
     @Size(min=1, max= 50, message="Nom trop grand")
-    @Pattern(regexp = "^[a-z-.A-Z]*$", message="Vous utilisez des caractères non valides")    
+    @Pattern(regexp = "^[a-z- .A-Z]*$", message="Vous utilisez des caractères non valides")    
     private String musicFlux;
 
     @NotEmpty
     private String level;
 
     @NotNull
-    private Long departement;
+    @Size(min=1, max= 100, message="Nom trop grand")
+    private String departement;
 
     // Constructeurs du groupe
     public Groupe(){
@@ -48,7 +49,7 @@ public class Groupe
 
     public Groupe(Long id, String nameGroupe, String contactName, 
     String groupPhone, String groupMail, String groupInfo, String instrument, 
-    String musicFlux, String level, Long departement) 
+    String musicFlux, String level, String departement) 
     {
         this.id = id;
         this.nameGroupe = nameGroupe;
@@ -154,12 +155,12 @@ public class Groupe
         this.level = level;
     }
 
-    public Long getDepartement() 
+    public String getDepartement() 
     {
         return this.departement;
     }
 
-    public void setDepartement(Long departement) 
+    public void setDepartement(String departement) 
     {
         this.departement = departement;
     }
@@ -218,7 +219,7 @@ public class Groupe
         return this;
     }
 
-    public Groupe departement(Long departement) 
+    public Groupe departement(String departement) 
     {
         this.departement = departement;
         return this;
