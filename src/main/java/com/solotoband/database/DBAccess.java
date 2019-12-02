@@ -8,30 +8,46 @@ public class DBAccess {
     private Connection connection = null;
 
     private static DBAccess instance = null;
-    
-    // fonction  (a revoir).
+
+    /**
+     * Methode de classe servant à récupérer l'unique instance de DBAccess
+     * 
+     * @return DBAccess
+     */
     public static DBAccess getInstance() {
         if (instance == null) {
-            instance =  new DBAccess();
+            instance = new DBAccess();
         }
         return instance;
     }
 
-    // créer une methode qui configure notre connection à la DB (attribut null si connection echoue)
+    /**
+     * constructeur de la class DBAccess privé pour empécher la construction en
+     * dehors de la classe car on souhaite une seul instance pour récupérer cette
+     * instance il faut utiliser la méthode getInstance()
+     * 
+     */
     private DBAccess() {
         Properties config = new Properties();
         config.setProperty("user", DBConfig.USER);
         config.setProperty("password", DBConfig.PASSWORD);
-           
+
         try {
             connection = DriverManager.getConnection(DBConfig.URL, config);
 
         } catch (Exception e) {
             e.printStackTrace();
-        }   
+        }
     }
 
-    //methode du Statement sur une connection ouverte.
+    /**
+     * methode permettant la création d'une nouvelle requete avec la connexion
+     * courante en cas de probleme, par exemple si la connexion n'est pas ouverte,
+     * return null.
+     * 
+     * @return Statement nouvelle requête ou null en cas de problème
+     *
+     */
     public Statement getStatement() {
         Statement request = null;
         if (connection == null) {
@@ -47,7 +63,7 @@ public class DBAccess {
         return null;
     }
 
-    //methode préparation de requête sur une connection ouverte.
+    // methode préparation de requête sur une connection ouverte.
     public PreparedStatement getPrepareStatement(String sqlCommand) {
         PreparedStatement request = null;
         if (connection == null) {
@@ -62,6 +78,5 @@ public class DBAccess {
         }
         return null;
     }
-
 
 }
