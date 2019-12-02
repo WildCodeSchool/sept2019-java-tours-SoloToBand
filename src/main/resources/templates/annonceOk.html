@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> <!--import de boostrap-->
+    <link rel="stylesheet" th:href="@{sandstone.min.css}"></link> <!--import de boostrap-->
+    <title>Feedback d'envoi</title>
+</head>
+<body>
+    <div class= container>
+        <div class="row">
+            <div class="col-md-2  "></div>
+            <div class="col-md-8 col-12 jumbotron px-4">
+           
+                    <h1 class="display-3 text-center">Félicitations !</h1>
+                    <p class="lead">Vous avez entrer les données suivantes :</p>
+                    <hr class="my-4">
+                    <ul class="list-group">
+                            <img class="img-fluid" th:src="${groupe.image}">
+                            <li class="list-group-item list-group-item-action" th:text="|Nom: ${groupe.nameGroupe}|">$nameGroupe</li>
+                            <li class="list-group-item list-group-item-action" th:text="|Nom contact: ${groupe.contactName}|">$contactName</li>
+                            <li class="list-group-item list-group-item-action" th:text="|Telephone: ${groupe.groupPhone}|">$groupPhone</li>
+                            <li class="list-group-item list-group-item-action" th:text="|Email: ${groupe.groupMail}|">$groupMail</li>
+                            <li class="list-group-item list-group-item-action" th:text="|Instrument: ${groupe.instrument}|">$instrument</li>
+                            <li class="list-group-item list-group-item-action" th:text="|Courant musical: ${groupe.musicFlux}|">$musicFlux</li>
+                            <li class="list-group-item list-group-item-action" th:text="|Niveau: ${groupe.level}|">$level</li>
+                            <li class="list-group-item list-group-item-action" th:text="|Département: ${groupe.departement}|">$departement</li>
+                            <li class="list-group-item list-group-item-action" th:text="|Info: ${groupe.groupInfo}|">$groupInfo</li>
+                        </ul>
+                    <p class="lead text-center">
+                      <a class="btn btn-secondary" href="/groupe" role="button">OK</a>
+                    </p>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+</body>
+</html>
