@@ -21,7 +21,7 @@
 
 DROP TABLE IF EXISTS `annonce`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `annonce` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `instrument` int(11) NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE `annonce` (
   CONSTRAINT `groupe` FOREIGN KEY (`groupe`) REFERENCES `groupe` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `instrument` FOREIGN KEY (`instrument`) REFERENCES `instrument` (`idinstrument`) ON DELETE CASCADE,
   CONSTRAINT `style` FOREIGN KEY (`style`) REFERENCES `style` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Table qui rassemble les annonces';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci COMMENT='Table qui rassemble les annonces';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -57,14 +57,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `departement`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `departement` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `departement_code` varchar(3) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `departement_nom` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -83,7 +83,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `groupe`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `groupe` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `group_name` varchar(100) NOT NULL,
@@ -93,7 +93,7 @@ CREATE TABLE `groupe` (
   `image` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `idgroupe_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -112,16 +112,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `instrument`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `instrument` (
   `idinstrument` int(11) NOT NULL AUTO_INCREMENT,
-  `vent` varchar(100) DEFAULT NULL,
-  `corde` varchar(100) DEFAULT NULL,
-  `percution` varchar(100) DEFAULT NULL,
-  `electrique` varchar(100) DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `categorie` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`idinstrument`),
   UNIQUE KEY `idinstrument_UNIQUE` (`idinstrument`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='table des instruments de musique par type';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci COMMENT='table des instruments de musique par type';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -130,7 +128,7 @@ CREATE TABLE `instrument` (
 
 LOCK TABLES `instrument` WRITE;
 /*!40000 ALTER TABLE `instrument` DISABLE KEYS */;
-INSERT INTO `instrument` VALUES (1,'Clarinette',NULL,NULL,NULL),(2,'hautbois',NULL,NULL,NULL),(3,'clarinette',NULL,NULL,NULL);
+INSERT INTO `instrument` VALUES (1,'Clarinette','Vent'),(2,'hautbois','Vent'),(3,'flutte','Vent');
 /*!40000 ALTER TABLE `instrument` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -140,7 +138,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `style`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `style` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `classique` varchar(100) DEFAULT NULL,
@@ -150,7 +148,7 @@ CREATE TABLE `style` (
   `jazz` varchar(100) DEFAULT NULL,
   `divers` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
