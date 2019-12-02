@@ -18,8 +18,9 @@ public class GroupeRepository {
     public static boolean createGroup(Groupe groupe) {
 
         try {
-            // fonction et commande SQL afin de générer une clef et de créer l'insert dans
-            // la DB.
+            /**
+             * fonction et commande SQL afin de générer une clef et de créer l'insert dans la DB.
+             */ 
             PreparedStatement statement = database.getPrepareStatement(
                 "INSERT INTO groupe (group_name, contact_name, group_phone, group_email, image) VALUES (?, ?, ?, ?, ?)"
             );

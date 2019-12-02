@@ -22,7 +22,7 @@
               </div>
               <div class="col-lg-2 col-1"></div>
               <div class="col-lg-7 col-7">
-                <h1 class="tirtre-index">Annonce des musiciens</h1>
+                <h1 class="titre-index">Annonce des musiciens</h1>
               </div>
             </div>
 
@@ -64,28 +64,32 @@
             <br /><br /> 
             
         </div>
-       <!-- <div class="col-6">
-                <form method="POST" action="#" th:action="@{/groupe}" th:object="${groupe}"> 
+       <div class="col-6">
+                <form method="POST" action="#" th:action="@{/annonce}" th:object="${groupe}"> 
                 
                 <div class= "row mb-2 mt-2" >
                     <div class="col-3"> 
-                        <p class="validation" th:if="${#fields.hasErrors('instrument')}" th:errors="*{instrument}"/>
                         <label for="instrument">Instrument:</label>
-                        <input id="instrument" name="instrument" placeholder="piano" required type="text" th:field="*{instrument}">
+                        <select id="instrument" name="instrument"  type="text">
+                        <option>07 Saint Denis </option>
                         <br><br>
                     </div>
                 
                     <div class="col-3">
-                        <p class="validation" th:if="${#fields.hasErrors('departement')}" th:errors="*{departement}"/>
                         <label for="departement">Départment:</label>
-                        <input id="departement" name="departement" placeholder="974" required type="text" th:field="*{departement}">
+                        <select id="departement" name="departement"  type="text">
+                            <option>07 Saint Denis </option>
+
+                        </select>
                         <br><br>
                     </div>
                 
                     <div class="col-3">
-                        <p class="validation" th:if="${#fields.hasErrors('musicFlux')}" th:errors="*{musicFlux}"/>
-                        <label for="musicFlux">Courant musical:</label>
-                        <input id="musicFlux" name="musicFlux" placeholder="Grunge" required type="text" th:field="*{musicFlux}">
+                        
+                        <label for="style">Courant musical:</label>
+                        <select id="style" name="style"  type="text">
+                                <option>07 Saint Denis </option>
+                       
                         <br><br>
                     </div>
                 
@@ -101,9 +105,9 @@
                  </div>
                  <div class= "row mb-2 mt-2" >
                     <div class="col-10"> 
-                        <p class="validation" th:if="${#fields.hasErrors('groupInfo')}" th:errors="*{groupInfo}"/>
-                        <label for="groupInfo">Informations sur le groupe:</label>
-                        <textarea class="form-control" id="groupInfo" rows="5" col="12" name="groupInfo" placeholder="Présentez votre groupe" required type="text" th:field="*{groupInfo}"></textarea>
+                        <p class="validation" th:if="${#fields.hasErrors('info')}" th:errors="*{info}"/>
+                        <label for="info">Informations sur le groupe:</label>
+                        <textarea class="form-control" id="info" rows="5" col="12" name="info" placeholder="Présentez votre groupe" required type="text" th:field="*{info}"></textarea>
                     </div> -->
                     <div class="col-4">   
                         <div class="bouton">

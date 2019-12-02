@@ -4,15 +4,13 @@ import javax.validation.constraints.*;
 public class Annonce 
 {
     // Déclaration des variables du constructeur et des validateurs
-    private Long id;
+    private long id;
 
     @NotEmpty
-    @Size(min=1, max= 50, message="Nom trop grand")
-    private String instrument;
+    private long instrument;
 
-    @NotEmpty
-    @Size(min=1, max= 50, message="Nom trop grand")  
-    private String style;
+    @NotEmpty 
+    private long style;
 
     @NotEmpty
     @Size(min=1, max= 50, message="Nom trop grand")
@@ -22,16 +20,16 @@ public class Annonce
     private String info;
 
     @NotEmpty
-    @Size(min=1, max= 50, message="Nom trop grand")
-    private String departement;
+    private long departement;
 
-    private Long groupe;
+    private long groupe;
+
 
 
     public Annonce() {
     }
 
-    public Annonce(Long id, String instrument, String style, String level, String info, String departement, Long groupe) {
+    public Annonce(long id, long instrument, long style, String level, String info, long departement, long groupe) {
         this.id = id;
         this.instrument = instrument;
         this.style = style;
@@ -41,27 +39,27 @@ public class Annonce
         this.groupe = groupe;
     }
 
-    public Long getId() {
+    public long getId() {
         return this.id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public String getInstrument() {
+    public long getInstrument() {
         return this.instrument;
     }
 
-    public void setInstrument(String instrument) {
+    public void setInstrument(long instrument) {
         this.instrument = instrument;
     }
 
-    public String getStyle() {
+    public long getStyle() {
         return this.style;
     }
 
-    public void setStyle(String style) {
+    public void setStyle(long style) {
         this.style = style;
     }
 
@@ -81,58 +79,22 @@ public class Annonce
         this.info = info;
     }
 
-    public String getDepartement() {
+    public long getDepartement() {
         return this.departement;
     }
 
-    public void setDepartement(String departement) {
+    public void setDepartement(long departement) {
         this.departement = departement;
     }
 
-    public Long getGroupe() {
+    public long getGroupe() {
         return this.groupe;
     }
 
-    public void setGroupe(Long groupe) {
+    public void setGroupe(long groupe) {
         this.groupe = groupe;
     }
-
-    public Annonce id(Long id) {
-        this.id = id;
-        return this;
-    }
-
-    public Annonce instrument(String instrument) {
-        this.instrument = instrument;
-        return this;
-    }
-
-    public Annonce style(String style) {
-        this.style = style;
-        return this;
-    }
-
-    public Annonce level(String level) {
-        this.level = level;
-        return this;
-    }
-
-    public Annonce info(String info) {
-        this.info = info;
-        return this;
-    }
-
-    public Annonce departement(String departement) {
-        this.departement = departement;
-        return this;
-    }
-
-    public Annonce groupe(Long groupe) {
-        this.groupe = groupe;
-        return this;
-    }
-}
 
     
-
-   
+}
+    

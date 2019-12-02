@@ -38,7 +38,7 @@ public class GroupeController
         return "erreur";
     }
 
-   /* @GetMapping("/valiation")
+   /* @GetMapping("/validation")
     public String groupe(Model model)
     {
         Groupe groupe = new Groupe();
