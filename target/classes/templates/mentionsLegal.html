@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="https://www.thymeleaf.org/">
+
+
+<head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> <!--import de boostrap-->
+    <link rel="stylesheet" th:href="@{sandstone.min.css}"></link>
+    <link rel="stylesheet" th:href="@{style.css}"></link>
+
+    <title>SolotoBand</title>
+</head>
+<body>
+<div class= "container"> <!--div page boostrap-->
+    <header>
+        <h1 class="tirtre-index">Mentions Legals</h1>
+
+        <div th:replace="header::top"></div> <!--Ajout du header-->
+    </header>
+
+    <p style="text-align:justify">Conformément aux dispositions des articles 6-III et 19 de la Loi n° 2004-575 du 21 juin 2004 pour la Confiance dans l'économie numérique, dite L.C.E.N., nous portons à la connaissance des utilisateurs et visiteurs du site : <a href="http://www.solo-to-band.com" target="_blank">www.solo-to-band.com</a> les informations suivantes :</p>
+
+    <p style="text-align:justify"><strong>Informations légales :</strong></p>
+
+    <p>Le Propriétaire est : <strong>StB SoloToBand</strong><br />
+    Adresse postale du propriétaire : <strong>75 rue de la cornemuse 37000 Tours</strong><br />
+     <br />
+
+    Le Webmaster est  : <strong>Billie bob</strong><br />
+    Contacter le Webmaster :  <strong><a href="mailto:billiebob@gmail.com?subject=Contact a partir des mentions lÃ©gales via le site www.solo-to-band.com">billiebob@gmail.com</a></strong><br />
+        L’hebergeur du site est : <strong>Billieservice 16 rue de l'hebergement 37000 Tours</strong><br /></p>
+
+    <p style="text-align:justify"> </p>
+
+    <p style="text-align:justify"><strong>Présentation et principe :</strong></p>
+
+    <p style="text-align:justify">Est désigné ci-après : <strong>Utilisateur</strong>, tout internaute se connectant et utilisant le site susnommé : <a href="http://www.solo-to-band.com" target="_blank">www.solo-to-band.com</a>.<br />
+        Le site <strong>www.solo-to-band.com</strong><strong> </strong>regroupe un ensemble de services, dans l'état,  mis à la disposition des utilisateurs. Il est ici précisé que ces derniers doivent rester courtois et faire preuve de bonne foi tant envers les autres utilisateurs qu'envers le webmaster du site www.solo-to-band.com. Le site www.solo-to-band.com est mis à jour régulièrement par Billie bob.<br />
+        StB SoloToBand s’efforce de fournir sur le site www.solo-to-band.com des informations les plus précises possibles (sous réserve de modifications apportées depuis leur mise en ligne), mais ne saurait garantir l'exactitude, la complétude et l'actualité des informations diffusées sur son site, qu’elles soient de son fait ou du fait des tiers partenaires qui lui fournissent ces informations. En conséquence, l'utilisateur reconnaît utiliser ces informations données (à titre indicatif, non exhaustives et susceptibles d'évoluer) sous sa responsabilité exclusive.</p>
+
+    <p style="text-align:justify"> </p>
+
+    <p style="text-align:justify"><strong>Propriété intellectuelle :</strong></p>
+
+    <p style="text-align:justify"><br />
+        StB SoloToBand est propriétaire exclusif de tous les droits de propriété intellectuelle ou détient les droits d’usage sur tous les éléments accessibles sur le site, tant sur la structure que sur les textes, images, graphismes, logo, icônes, sons, logiciels…<br />
+        Toute reproduction totale ou partielle du site www.solo-to-band.com, représentation, modification, publication, adaptation totale ou partielle de l'un quelconque de ces éléments, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de StB SoloToBand, propriétaire du site à l'email : billiebob@gmail.com, à défaut elle sera considérée comme constitutive d’une contrefaçon et passible de poursuite conformément aux dispositions des articles L.335-2 et suivants du Code de Propriété Intellectuelle.</p>
+
+    <p style="text-align:justify"><br />
+        <strong>Protection des biens et des personnes - gestion des données personnelles :</strong><br />
+        <br />
+        En France, les données personnelles sont notamment protégées par la loi n° 78-87 du 6 janvier 1978, la loi n° 2004-801 du 6 août 2004, l'article L. 226-13 du Code pénal et la Directive Européenne du 24 octobre 1995.</p>
+
+    <p style="text-align:justify">Les bases de données sont protégées par les dispositions de la loi du 1er juillet 1998 transposant la directive 96/9 du 11 mars 1996 relative à la protection juridique des bases de données.</p>
+
+    <footer>
+        <div th:replace="footer :: foot"></div>
+    </footer>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+</div>
+</body>
+
+</html>
