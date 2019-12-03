@@ -7,10 +7,10 @@ public class Annonce
     private long id;
 
     @NotEmpty
-    private long id_instrument;
+    private long idInstrument;
 
     @NotEmpty 
-    private long id_style;
+    private long idStyle;
 
     @NotEmpty
     @Size(min=1, max= 50, message="Nom trop grand")
@@ -20,9 +20,9 @@ public class Annonce
     private String info;
 
     @NotEmpty
-    private long id_departement;
+    private long idDepartement;
 
-    private long groupe;
+    private long idGroupe;
 
 
 
@@ -30,14 +30,14 @@ public class Annonce
     public Annonce() {
     }
 
-    public Annonce(long id, long id_instrument, long id_style, String level, String info, long id_departement, long groupe) {
+    public Annonce(long id, long idInstrument, long idStyle, String level, String info, long idDepartement, long idGroupe) {
         this.id = id;
-        this.id_instrument = id_instrument;
-        this.id_style = id_style;
+        this.idInstrument = idInstrument;
+        this.idStyle = idStyle;
         this.level = level;
         this.info = info;
-        this.id_departement = id_departement;
-        this.groupe = groupe;
+        this.idDepartement = idDepartement;
+        this.idGroupe = idGroupe;
     }
 
     public long getId() {
@@ -48,20 +48,20 @@ public class Annonce
         this.id = id;
     }
 
-    public long getId_instrument() {
-        return this.id_instrument;
+    public long getIdInstrument() {
+        return this.idInstrument;
     }
 
-    public void setId_instrument(long id_instrument) {
-        this.id_instrument = id_instrument;
+    public void setIdInstrument(long idInstrument) {
+        this.idInstrument = idInstrument;
     }
 
-    public long getId_style() {
-        return this.id_style;
+    public long getIdStyle() {
+        return this.idStyle;
     }
 
-    public void setId_style(long id_style) {
-        this.id_style = id_style;
+    public void setIdStyle(long idStyle) {
+        this.idStyle = idStyle;
     }
 
     public String getLevel() {
@@ -80,24 +80,23 @@ public class Annonce
         this.info = info;
     }
 
-    public long getId_departement() {
-        return this.id_departement;
+    public long getIdDepartement() {
+        return this.idDepartement;
     }
 
-    public void setId_departement(long id_departement) {
-        this.id_departement = id_departement;
+    public void setIdDepartement(long idDepartement) {
+        this.idDepartement = idDepartement;
     }
 
-    public long getGroupe() {
-        return this.groupe;
+    public long getIdGroupe() {
+        return this.idGroupe;
     }
 
-    public void setGroupe(long groupe) {
-        this.groupe = groupe;
+    public void setIdGroupe(long idGroupe) {
+        this.idGroupe = idGroupe;
     }
 
-   
     
-    }
+}
 
     

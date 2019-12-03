@@ -82,9 +82,7 @@
                     <select class="custom-select" name="departement">
                         <option th:each="departement : ${departements}"
                             th:text="${departement.departement_code} + ' ' + ${departement.departement_nom}"
-                            th:value="${departement.id}">
-                            Ardèche
-                        </option>
+                            th:value="${departement.id}"/>
                     </select>
                         <br><br>
                     </div>
@@ -92,8 +90,7 @@
                     <div class="col-3">
                         <legend>Courant musical</legend>
                     <select class="custom-select" name="musicFlux">
-                        <option th:each="style : ${styles}" th:text="${style.name_style}" th:value="${style.id}">Rock
-                        </option>
+                        <option th:each="style : ${styles}" th:text="${style.name_style}" th:value="${style.id}"/>
                     </select>
                         <br><br>
                     </div>

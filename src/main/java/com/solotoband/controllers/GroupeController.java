@@ -1,10 +1,10 @@
 package com.solotoband.controllers;
 
 import java.util.List;
-
 import javax.swing.text.html.parser.Entity;
 import javax.validation.Valid;
 
+import com.solotoband.entity.Annonce;
 import com.solotoband.entity.Departement;
 import com.solotoband.entity.Groupe;
 import com.solotoband.entity.Instrument;
@@ -53,7 +53,29 @@ public class GroupeController
 
     @GetMapping("/groupe/{groupeId}")
     public String annonce(@PathVariable final long groupeId, Model model) {
-        groupeId = ;
+        Annonce annonce = new Annonce();
+        model.addAttribute("annonce", annonce);
+        List<Instrument> instruments = depot.findAll();
+        if (instruments == null) {
+            return "erreur";
+        }
+        model.addAttribute("instruments", instruments);
+
+        List<Departement> departements = depotDepartements.findAll();
+        if (departements == null) {
+            return "erreur";
+        }
+        model.addAttribute("departements", departements);
+
+        StyleRepository depotStyle = new StyleRepository();
+        List<Style> styles = depotStyle.findAll();
+        if (styles == null) {
+            return "erreur";
+
+        }
+        model.addAttribute("styles", styles);
+
+
 
         return "annonce";
     }

@@ -1,29 +1,29 @@
 package com.solotoband.repository;
 
 import com.solotoband.database.DBAccess;
-import com.solotoband.entity.Annonce;
+import com.solotoband.entity.*;
 import java.sql.*;
 
 
 
 public class AnnonceRepository {
     // methode qui va appeler la connection à la DB.
-    private static DBAccess database = null;
+    private  DBAccess database = null;
 
     public AnnonceRepository() {
         database = DBAccess.getInstance();
     }
 
-    public static boolean createAnnonce(Annonce annonce) {
+    public  boolean createAnnonce(Annonce annonce) {
         try {
             PreparedStatement statement = database.getPrepareStatement( "INSERT INTO annonce (instrument, style, level, info, departement, groupe) VALUES (?, ?, ?, ?, ?, ?)"
             );
-            statement.setLong(1, instrument.getId());
-            statement.setLong(2, style.getId());
+            statement.setLong(1, annonce.getIdInstrument());
+            statement.setLong(2, annonce.getIdStyle());
             statement.setString(3, annonce.getLevel());
             statement.setString(4, annonce.getInfo());
-            statement.setLong(5, departement.getId());
-            statement.setLong(6, groupe.getId());
+            statement.setLong(5, annonce.getIdDepartement());
+            statement.setLong(6, annonce.getIdGroupe());
 
             // condition si l'execution de l'instruction SQL ne réussi pas.
             if (statement.executeUpdate() != 1) 
