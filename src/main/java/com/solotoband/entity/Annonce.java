@@ -7,10 +7,10 @@ public class Annonce
     private long id;
 
     @NotEmpty
-    private long instrument;
+    private long id_instrument;
 
     @NotEmpty 
-    private long style;
+    private long id_style;
 
     @NotEmpty
     @Size(min=1, max= 50, message="Nom trop grand")
@@ -20,22 +20,23 @@ public class Annonce
     private String info;
 
     @NotEmpty
-    private long departement;
+    private long id_departement;
 
     private long groupe;
+
 
 
 
     public Annonce() {
     }
 
-    public Annonce(long id, long instrument, long style, String level, String info, long departement, long groupe) {
+    public Annonce(long id, long id_instrument, long id_style, String level, String info, long id_departement, long groupe) {
         this.id = id;
-        this.instrument = instrument;
-        this.style = style;
+        this.id_instrument = id_instrument;
+        this.id_style = id_style;
         this.level = level;
         this.info = info;
-        this.departement = departement;
+        this.id_departement = id_departement;
         this.groupe = groupe;
     }
 
@@ -47,20 +48,20 @@ public class Annonce
         this.id = id;
     }
 
-    public long getInstrument() {
-        return this.instrument;
+    public long getId_instrument() {
+        return this.id_instrument;
     }
 
-    public void setInstrument(long instrument) {
-        this.instrument = instrument;
+    public void setId_instrument(long id_instrument) {
+        this.id_instrument = id_instrument;
     }
 
-    public long getStyle() {
-        return this.style;
+    public long getId_style() {
+        return this.id_style;
     }
 
-    public void setStyle(long style) {
-        this.style = style;
+    public void setId_style(long id_style) {
+        this.id_style = id_style;
     }
 
     public String getLevel() {
@@ -79,12 +80,12 @@ public class Annonce
         this.info = info;
     }
 
-    public long getDepartement() {
-        return this.departement;
+    public long getId_departement() {
+        return this.id_departement;
     }
 
-    public void setDepartement(long departement) {
-        this.departement = departement;
+    public void setId_departement(long id_departement) {
+        this.id_departement = id_departement;
     }
 
     public long getGroupe() {
@@ -95,6 +96,8 @@ public class Annonce
         this.groupe = groupe;
     }
 
+   
     
-}
+    }
+
     

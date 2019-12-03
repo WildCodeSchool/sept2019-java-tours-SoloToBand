@@ -69,27 +69,32 @@
                 
                 <div class= "row mb-2 mt-2" >
                     <div class="col-3"> 
-                        <label for="instrument">Instrument:</label>
-                        <select id="instrument" name="instrument"  type="text">
-                        <option>07 Saint Denis </option>
+                    <legend>Instrument</legend>
+                    <select class="custom-select" name="instrument">
+                    <option th:each="instrument : ${instruments}" th:text="${instrument.name}"
+                    th:value="${instrument.id}"/>
+                    </select>
                         <br><br>
                     </div>
                 
                     <div class="col-3">
-                        <label for="departement">Départment:</label>
-                        <select id="departement" name="departement"  type="text">
-                            <option>07 Saint Denis </option>
-
-                        </select>
+                        <legend>Département</legend>
+                    <select class="custom-select" name="departement">
+                        <option th:each="departement : ${departements}"
+                            th:text="${departement.departement_code} + ' ' + ${departement.departement_nom}"
+                            th:value="${departement.id}">
+                            Ardèche
+                        </option>
+                    </select>
                         <br><br>
                     </div>
                 
                     <div class="col-3">
-                        
-                        <label for="style">Courant musical:</label>
-                        <select id="style" name="style"  type="text">
-                                <option>07 Saint Denis </option>
-                       
+                        <legend>Courant musical</legend>
+                    <select class="custom-select" name="musicFlux">
+                        <option th:each="style : ${styles}" th:text="${style.name_style}" th:value="${style.id}">Rock
+                        </option>
+                    </select>
                         <br><br>
                     </div>
                 

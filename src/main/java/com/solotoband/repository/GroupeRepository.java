@@ -15,7 +15,7 @@ public class GroupeRepository {
         database = DBAccess.getInstance();
     }
 
-    public static boolean createGroup(Groupe groupe) {
+    public boolean createGroup(Groupe groupe) {
 
         try {
             /**
@@ -58,6 +58,12 @@ public class GroupeRepository {
                 return false;
             }
     }
+
+
+
+
+
+    
 
     /* méthode de selection par les musiciens dans la base de donnée groupe.
     // méthode qui prend en paramètre les champs de recherche de la page de recherche.

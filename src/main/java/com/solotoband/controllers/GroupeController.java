@@ -1,20 +1,33 @@
 package com.solotoband.controllers;
 
+import java.util.List;
+
+import javax.swing.text.html.parser.Entity;
 import javax.validation.Valid;
 
+import com.solotoband.entity.Departement;
 import com.solotoband.entity.Groupe;
+import com.solotoband.entity.Instrument;
+import com.solotoband.entity.Style;
+import com.solotoband.repository.DepartementRepository;
 import com.solotoband.repository.GroupeRepository;
-
+import com.solotoband.repository.InstrumentRepository;
+import com.solotoband.repository.StyleRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class GroupeController
 {
     GroupeRepository repository = new GroupeRepository();
+    InstrumentRepository depot = new InstrumentRepository();
+    StyleRepository depotStyle = new StyleRepository();
+    DepartementRepository depotDepartements = new DepartementRepository();
+
     @GetMapping("/groupe")
     public String groupe(Model model)
     {
@@ -29,37 +42,36 @@ public class GroupeController
         {
             return "groupe";
         }
-       
-        if (GroupeRepository.createGroup(groupe)){
-            model.addAttribute("groupe", groupe);
-            return "annonce";
+            
+        if (repository.createGroup(groupe)){
+
+            return "redirect:/groupe/"+groupe.getId();
         }
 
         return "erreur";
     }
 
-   /* @GetMapping("/validation")
-    public String groupe(Model model)
-    {
-        Groupe groupe = new Groupe();
-        model.addAttribute("groupe", groupe);
-        return "groupe";
-    } 
+    @GetMapping("/groupe/{groupeId}")
+    public String annonce(@PathVariable final long groupeId, Model model) {
+        groupeId = ;
 
-    @PostMapping("/validation")
-    public String postGroupe(@Valid Groupe groupe, BindingResult bindingResult, Model model) {
-        if (bindingResult.hasErrors())
-        {
-            return "groupe";
-        }
-       
-        if (GroupeRepository.createGroup(groupe)){
-            model.addAttribute("groupe", groupe);
-            return "annonce";
-        }
-
-        return "erreur";
+        return "annonce";
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
 
    /* @GetMapping("musicien/resultats")
     public String resultat(Model model, 

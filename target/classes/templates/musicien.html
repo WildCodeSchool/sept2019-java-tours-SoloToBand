@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr" xmlns:th="https://www.thymeleaf.org/">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,35 +36,28 @@
                 <div class="col-lg-3">
                     <legend>Instrument</legend>
                     <select class="custom-select" name="instrument">
-                        <!--Boucle à faire avec BDD-->
-                        <option>guitare</option>
-                        <option>Flûte</option>
-                        <option>Baterie</option>
-                        <option>Basse</option>
-                        <option>Piano</option>
+                        <option th:each="instrument : ${instruments}" th:text="${instrument.name}"
+                            th:value="${instrument.id}">guitare</option>
                     </select>
                 </div>
 
                 <div class="col-lg-3">
                     <legend>Courant musical</legend>
                     <select class="custom-select" name="musicFlux">
-                        <!--Boucle à faire avec BDD-->
-                        <option>Rock</option>
-                        <option>Jazz</option>
-                        <option>classique</option>
-                        <option>Electronique</option>
-                        <option>Latino</option>
+                        <option th:each="style : ${styles}" th:text="${style.name_style}" th:value="${style.id}">Rock
+                        </option>
+
                     </select>
                 </div>
 
                 <div class="col-lg-3">
                     <legend>Département</legend>
                     <select class="custom-select" name="departement">
-                        <!--Boucle à faire avec BDD-->
-                        <option>07</option>
-                        <option>37</option>
-                        <option>974</option>
-                        <option>31</option>
+                        <option th:each="departement : ${departements}"
+                            th:text="${departement.departement_code} + ' ' + ${departement.departement_nom}"
+                            th:value="${departement.id}">
+                            Ardèche
+                        </option>
                     </select>
                 </div>
 
@@ -84,10 +78,10 @@
 
 
 
-            
-                <div class="modal-footer mt-5">
-                                <input class="modal-footer mt-5" type="submit" value="Rechercher" id="rechercher" />
-                            </div>
+
+            <div class="modal-footer mt-5">
+                <input class="modal-footer mt-5" type="submit" value="Rechercher" id="rechercher" />
+            </div>
 
             <br /><br />
         </form>
