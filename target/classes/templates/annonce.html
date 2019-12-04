@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> <!--import de boostrap-->
-    <link rel="stylesheet" th:href="@{sandstone.min.css}"></link>
-    <link rel="stylesheet" th:href="@{style.css}"></link>
+    <link rel="stylesheet" th:href="@{/sandstone.min.css}"></link>
+    <link rel="stylesheet" th:href="@{/style.css}"></link>
 
 
     <title>SoloToBand</title>
@@ -65,21 +65,21 @@
             
         </div>
        <div class="col-6">
-                <form method="POST" action="#" th:action="@{/annonce}" th:object="${groupe}"> 
+                <form method="POST" action="#" th:action="@{'/annonce/'+ ${groupe.id}}" th:object="${annonce}"> 
                 
                 <div class= "row mb-2 mt-2" >
                     <div class="col-3"> 
-                    <legend>Instrument</legend>
-                    <select class="custom-select" name="instrument">
-                    <option th:each="instrument : ${instruments}" th:text="${instrument.name}"
-                    th:value="${instrument.id}"/>
-                    </select>
+                        <legend>Instrument</legend>
+                        <select class="custom-select" name="idInstrument" th:field="*{idInstrument}">
+                            <option th:each="instrument : ${instruments}" th:text="${instrument.name}"
+                            th:value="${instrument.id}"/>
+                        </select>
                         <br><br>
                     </div>
                 
                     <div class="col-3">
                         <legend>Département</legend>
-                    <select class="custom-select" name="departement">
+                    <select class="custom-select" name="idDepartement" th:field="*{idDepartement}" >
                         <option th:each="departement : ${departements}"
                             th:text="${departement.departement_code} + ' ' + ${departement.departement_nom}"
                             th:value="${departement.id}"/>
@@ -89,7 +89,7 @@
                 
                     <div class="col-3">
                         <legend>Courant musical</legend>
-                    <select class="custom-select" name="musicFlux">
+                    <select class="custom-select" name="idStyle" th:field="*{idStyle}">
                         <option th:each="style : ${styles}" th:text="${style.name_style}" th:value="${style.id}"/>
                     </select>
                         <br><br>
@@ -97,11 +97,11 @@
                 
                     <div class="col-3">
                         <label for="level">niveau:</label>
-                        <select id="level" name="level" required type="text">
-                                <option>Débutant</option>
-                                <option>Intermédiaire</option>
-                                <option>Confirmé</option>
-                                <option>Expert</option>
+                        <select th:field="*{level}" id="level" name="level" required type="text">
+                                <option th:value="DEBUTANT">Débutant</option>
+                                <option th:value="INTERMEDIAIRE">Intermédiaire</option>
+                                <option th:value="CONFIRME">Confirmé</option>
+                                <option th:value="EXPERT">Expert</option>
                         </select>
                     </div>
                  </div>

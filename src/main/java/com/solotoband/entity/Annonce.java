@@ -6,20 +6,17 @@ public class Annonce
     // Déclaration des variables du constructeur et des validateurs
     private long id;
 
-    @NotEmpty
+    
     private long idInstrument;
 
-    @NotEmpty 
+     
     private long idStyle;
 
-    @NotEmpty
-    @Size(min=1, max= 50, message="Nom trop grand")
     private String level;
 
     @NotEmpty 
     private String info;
-
-    @NotEmpty
+    
     private long idDepartement;
 
     private long idGroupe;

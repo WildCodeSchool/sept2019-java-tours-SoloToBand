@@ -1,7 +1,8 @@
 package com.solotoband.repository;
 
 import com.solotoband.database.DBAccess;
-import com.solotoband.entity.*;
+import com.solotoband.entity.Annonce;
+
 import java.sql.*;
 
 
@@ -16,7 +17,8 @@ public class AnnonceRepository {
 
     public  boolean createAnnonce(Annonce annonce) {
         try {
-            PreparedStatement statement = database.getPrepareStatement( "INSERT INTO annonce (instrument, style, level, info, departement, groupe) VALUES (?, ?, ?, ?, ?, ?)"
+            PreparedStatement statement = database.getPrepareStatement(
+                "INSERT INTO annonce (instrument, style, level, info, departement, groupe) VALUES (?, ?, ?, ?, ?, ?)"
             );
             statement.setLong(1, annonce.getIdInstrument());
             statement.setLong(2, annonce.getIdStyle());

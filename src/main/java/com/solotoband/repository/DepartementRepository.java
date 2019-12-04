@@ -17,7 +17,7 @@ public class DepartementRepository {
 
     public List<Departement> findAll() {
 
-        List<Departement> departements = new ArrayList();
+        List<Departement> departements = new ArrayList<>();
         Statement requete = base.getStatement();
         if (requete == null) {
             return null;
