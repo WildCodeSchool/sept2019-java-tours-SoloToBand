@@ -5,11 +5,9 @@ public class Annonce
 {
     // Déclaration des variables du constructeur et des validateurs
     private long id;
-
     
     private long idInstrument;
 
-     
     private long idStyle;
 
     private String level;
