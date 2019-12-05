@@ -21,7 +21,7 @@
 
 DROP TABLE IF EXISTS `annonce`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `annonce` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `instrument` int(11) NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE `annonce` (
   CONSTRAINT `groupe` FOREIGN KEY (`groupe`) REFERENCES `groupe` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `instrument` FOREIGN KEY (`instrument`) REFERENCES `instrument` (`idinstrument`) ON DELETE CASCADE,
   CONSTRAINT `style` FOREIGN KEY (`style`) REFERENCES `style` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Table qui rassemble les annonces';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci COMMENT='Table qui rassemble les annonces';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -57,14 +57,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `departement`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `departement` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `departement_code` varchar(3) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `departement_nom` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -83,7 +83,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `groupe`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `groupe` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `group_name` varchar(100) NOT NULL,
@@ -93,7 +93,7 @@ CREATE TABLE `groupe` (
   `image` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `idgroupe_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -112,16 +112,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `instrument`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `instrument` (
   `idinstrument` int(11) NOT NULL AUTO_INCREMENT,
-  `vent` varchar(100) DEFAULT NULL,
-  `corde` varchar(100) DEFAULT NULL,
-  `percution` varchar(100) DEFAULT NULL,
-  `electrique` varchar(100) DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `categorie` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`idinstrument`),
   UNIQUE KEY `idinstrument_UNIQUE` (`idinstrument`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='table des instruments de musique par type';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci COMMENT='table des instruments de musique par type';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -130,7 +128,7 @@ CREATE TABLE `instrument` (
 
 LOCK TABLES `instrument` WRITE;
 /*!40000 ALTER TABLE `instrument` DISABLE KEYS */;
-INSERT INTO `instrument` VALUES (1,'Clarinette',NULL,NULL,NULL),(2,'hautbois',NULL,NULL,NULL),(3,'clarinette',NULL,NULL,NULL);
+INSERT INTO `instrument` VALUES (1,'Clarinette','Vent'),(2,'hautbois','Vent'),(3,'flutte','Vent');
 /*!40000 ALTER TABLE `instrument` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -140,17 +138,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `style`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `style` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `classique` varchar(100) DEFAULT NULL,
-  `rock` varchar(100) DEFAULT NULL,
-  `pop` varchar(100) DEFAULT NULL,
-  `rap` varchar(100) DEFAULT NULL,
-  `jazz` varchar(100) DEFAULT NULL,
-  `divers` varchar(100) DEFAULT NULL,
+  `name_style` varchar(100) DEFAULT NULL,
+  `courant` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -159,7 +153,7 @@ CREATE TABLE `style` (
 
 LOCK TABLES `style` WRITE;
 /*!40000 ALTER TABLE `style` DISABLE KEYS */;
-INSERT INTO `style` VALUES (1,'Symphonie',NULL,NULL,NULL,NULL,NULL),(2,'Concerto',NULL,NULL,NULL,NULL,NULL),(3,'sonate',NULL,NULL,NULL,NULL,NULL),(4,'Lied',NULL,NULL,NULL,NULL,NULL),(5,'Opéra',NULL,NULL,NULL,NULL,NULL),(6,'Choral',NULL,NULL,NULL,NULL,NULL),(7,NULL,'Blues rock',NULL,NULL,NULL,NULL),(8,NULL,'Emo',NULL,NULL,NULL,NULL),(9,NULL,'Alternatif',NULL,NULL,NULL,NULL),(10,NULL,'Cowpunk',NULL,NULL,NULL,NULL),(11,NULL,'Gothique',NULL,NULL,NULL,NULL),(12,NULL,'Celte',NULL,NULL,NULL,NULL),(13,NULL,'Instrumental',NULL,NULL,NULL,NULL),(14,NULL,NULL,'Indie',NULL,NULL,NULL),(15,NULL,NULL,'Cowntry',NULL,NULL,NULL),(16,NULL,NULL,'Pop Rock',NULL,NULL,NULL),(17,NULL,NULL,'Danse pop',NULL,NULL,NULL),(18,NULL,NULL,'Dream pop',NULL,NULL,NULL),(19,NULL,NULL,NULL,'RnB',NULL,NULL),(20,NULL,NULL,NULL,'Rap conscient',NULL,NULL),(21,NULL,NULL,NULL,'Rap égotrip',NULL,NULL),(22,NULL,NULL,NULL,'Rap poétique',NULL,NULL),(23,NULL,NULL,NULL,'Rap gangsta',NULL,NULL),(24,NULL,NULL,NULL,'Rap hardcore',NULL,NULL),(25,NULL,NULL,NULL,'Rap commercial',NULL,NULL),(26,NULL,NULL,NULL,NULL,'Free jazz',NULL),(27,NULL,NULL,NULL,NULL,'cool jazz',NULL),(28,NULL,NULL,NULL,NULL,'Swing',NULL),(29,NULL,NULL,NULL,NULL,'Bepop',NULL),(30,NULL,NULL,NULL,NULL,'Ragtime',NULL),(31,NULL,NULL,NULL,NULL,'Smooth jazz',NULL);
+INSERT INTO `style` VALUES (1,'Symphonie','classique'),(2,'Concerto','classique'),(3,'sonate','classique');
 /*!40000 ALTER TABLE `style` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

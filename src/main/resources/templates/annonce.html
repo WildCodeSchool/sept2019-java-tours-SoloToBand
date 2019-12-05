@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> <!--import de boostrap-->
-    <link rel="stylesheet" th:href="@{sandstone.min.css}"></link>
-    <link rel="stylesheet" th:href="@{style.css}"></link>
+    <link rel="stylesheet" th:href="@{/sandstone.min.css}"></link>
+    <link rel="stylesheet" th:href="@{/style.css}"></link>
 
 
     <title>SoloToBand</title>
@@ -18,11 +18,11 @@
         <header>
             <div class="row">
               <!--div ligne boostrap header-->
-              <div class="col-lg-2 col-2">
+              <div class="col-lg-2">
               </div>
-              <div class="col-lg-2 col-1"></div>
-              <div class="col-lg-7 col-7">
-                <h1 class="tirtre-index">Annonce des musiciens</h1>
+              <div class="col-lg-2"></div>
+              <div class="col-lg-7">
+                <h1 class="titre-index">Annonce des musiciens</h1>
               </div>
             </div>
 
@@ -31,87 +31,98 @@
         <br />
         
         <section class="row">
-        <div class="col-6">
-         <div class= "row mb-2 mt-2" > <!--div ligne boostrap -->
-            <div class="col-3"> 
-                <p th:text="|${groupe.nameGroupe}|">$groupe</p>
-                <br><br>
+        <div class="col-lg-6">
+            <div class= "row mb-2 mt-2" > <!--div ligne boostrap -->
+                <div class="col-4">
+                    <img class="img-fluid" th:src="${groupe.image}">
+                </div>
+                <div class="col-5 text-center"> 
+                    <h3 th:text="|${groupe.nameGroupe}|">$groupe</h3>
+                    <br><br>
+                </div>
             </div>
-
-            <div class="col-3"> 
-                <p th:text="|Nom contact: ${groupe.contactName}|">$contact</p>
-                <br><br>
-            </div>
-        </div>
-
+            
             <div class= "row mb-2 mt-2" >
-            <div class="col-3">
-                <p th:text="|Telephone: ${groupe.groupPhone}|">$tel</p>
+                <div class="col-5 my-4"> 
+                    <h4 th:text="|Nom contact: ${groupe.contactName}|">$contact</h4>
+                    <br><br>
+                </div>
+                <div class="col-5 my-4">
+                    <h4 th:text="|Telephone: ${groupe.groupPhone}|">$tel</h4>
+                    <br><br>
+                </div>
+            </div>
+
+            <div class="col-5"> 
+                <h4 th:text="|Email: ${groupe.groupMail}|">$mail</h4>
                 <br><br>
             </div>
 
-            <div class="col-3"> 
-                <p th:text="|Email: ${groupe.groupMail}|">$mail</p>
-                <br><br>
-            </div>
          </div>
          
-            <div class="row mt-5"> <!--bouton-->
-            <div class="col-4">
-                <img class="img-fluid" th:src="${groupe.image}">
-            </div>
-            </div>
-            <br /><br /> 
             
-        </div>
-       <!-- <div class="col-6">
-                <form method="POST" action="#" th:action="@{/groupe}" th:object="${groupe}"> 
+        
+       <div class="col-lg-6">
+                <form method="POST" action="#" th:action="@{'/annonce/'+ ${groupe.id}}" th:object="${annonce}"> 
                 
-                <div class= "row mb-2 mt-2" >
-                    <div class="col-3"> 
-                        <p class="validation" th:if="${#fields.hasErrors('instrument')}" th:errors="*{instrument}"/>
-                        <label for="instrument">Instrument:</label>
-                        <input id="instrument" name="instrument" placeholder="piano" required type="text" th:field="*{instrument}">
-                        <br><br>
-                    </div>
-                
-                    <div class="col-3">
-                        <p class="validation" th:if="${#fields.hasErrors('departement')}" th:errors="*{departement}"/>
-                        <label for="departement">Départment:</label>
-                        <input id="departement" name="departement" placeholder="974" required type="text" th:field="*{departement}">
-                        <br><br>
-                    </div>
-                
-                    <div class="col-3">
-                        <p class="validation" th:if="${#fields.hasErrors('musicFlux')}" th:errors="*{musicFlux}"/>
-                        <label for="musicFlux">Courant musical:</label>
-                        <input id="musicFlux" name="musicFlux" placeholder="Grunge" required type="text" th:field="*{musicFlux}">
-                        <br><br>
-                    </div>
-                
-                    <div class="col-3">
-                        <label for="level">niveau:</label>
-                        <select id="level" name="level" required type="text">
-                                <option>Débutant</option>
-                                <option>Intermédiaire</option>
-                                <option>Confirmé</option>
-                                <option>Expert</option>
+                <div class= "row mb-2 mt-2">
+                    <div class="col-5"> 
+                        <legend>Instrument</legend>
+                        <select class="custom-select" name="idInstrument" th:field="*{idInstrument}">
+                            <option th:each="instrument : ${instruments}" th:text="${instrument.name}"
+                            th:value="${instrument.id}"/>
                         </select>
+                        <br><br>
                     </div>
-                 </div>
-                 <div class= "row mb-2 mt-2" >
-                    <div class="col-10"> 
-                        <p class="validation" th:if="${#fields.hasErrors('groupInfo')}" th:errors="*{groupInfo}"/>
-                        <label for="groupInfo">Informations sur le groupe:</label>
-                        <textarea class="form-control" id="groupInfo" rows="5" col="12" name="groupInfo" placeholder="Présentez votre groupe" required type="text" th:field="*{groupInfo}"></textarea>
-                    </div> -->
-                    <div class="col-4">   
-                        <div class="bouton">
-                            <input type="submit" value="Enregistrer votre annonce">
-                        </div>
+                
+                    <div class="col-5">
+                        <legend>Département</legend>
+                    <select class="custom-select" name="idDepartement" th:field="*{idDepartement}" >
+                        <option th:each="departement : ${departements}"
+                            th:text="${departement.departement_code} + ' ' + ${departement.departement_nom}"
+                            th:value="${departement.id}"/>
+                    </select>
+                        <br><br>
                     </div>
                 </div>
-                </form>
+                
+                <div class= "row mb-2 mt-2">
+                    <div class="col-5">
+                        <legend>Courant musical</legend>
+                    <select class="custom-select" name="idStyle" th:field="*{idStyle}">
+                        <option th:each="style : ${styles}" th:text="${style.name_style}" th:value="${style.id}"/>
+                    </select>
+                        <br><br>
+                    </div>
+                
+                    <div class="col-5">
+                        <legend>niveau:</legend>
+                        <select class="custom-select" th:field="*{level}" id="level" name="level" required type="text">
+                                <option th:value="DEBUTANT">Débutant</option>
+                                <option th:value="INTERMEDIAIRE">Intermédiaire</option>
+                                <option th:value="CONFIRME">Confirmé</option>
+                                <option th:value="EXPERT">Expert</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class= "row mb-2 mt-2">
+                    <div class="col-10"> 
+                        <p class="validation" th:if="${#fields.hasErrors('info')}" th:errors="*{info}"/>
+                        <label for="info">Informations sur le groupe:</label>
+                        <textarea class="form-control" id="info" rows="5" col="12" name="info" placeholder="Présentez votre groupe" required type="text" th:field="*{info}"></textarea>
+                    </div>
+                </div>
+
+                <div class= "row mb-4 mt-4">
+                <div class="col-5"></div>
+                <div class="col-4">
+                        <div class="bouton">
+                            <input class="btn btn-secondary" type="submit" value="Enregistrer votre annonce">
+                        </div>
+                </div>
+             </div>
+            </form>
 
         </div>
 

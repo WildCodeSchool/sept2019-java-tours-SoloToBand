@@ -4,65 +4,59 @@ import javax.validation.constraints.*;
 public class Annonce 
 {
     // Déclaration des variables du constructeur et des validateurs
-    private Long id;
+    private long id;
+    
+    private long idInstrument;
 
-    @NotEmpty
-    @Size(min=1, max= 50, message="Nom trop grand")
-    private String instrument;
+    private long idStyle;
 
-    @NotEmpty
-    @Size(min=1, max= 50, message="Nom trop grand")  
-    private String style;
-
-    @NotEmpty
-    @Size(min=1, max= 50, message="Nom trop grand")
     private String level;
 
     @NotEmpty 
     private String info;
+    
+    private long idDepartement;
 
-    @NotEmpty
-    @Size(min=1, max= 50, message="Nom trop grand")
-    private String departement;
+    private long idGroupe;
 
-    private Long groupe;
+
 
 
     public Annonce() {
     }
 
-    public Annonce(Long id, String instrument, String style, String level, String info, String departement, Long groupe) {
+    public Annonce(long id, long idInstrument, long idStyle, String level, String info, long idDepartement, long idGroupe) {
         this.id = id;
-        this.instrument = instrument;
-        this.style = style;
+        this.idInstrument = idInstrument;
+        this.idStyle = idStyle;
         this.level = level;
         this.info = info;
-        this.departement = departement;
-        this.groupe = groupe;
+        this.idDepartement = idDepartement;
+        this.idGroupe = idGroupe;
     }
 
-    public Long getId() {
+    public long getId() {
         return this.id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public String getInstrument() {
-        return this.instrument;
+    public long getIdInstrument() {
+        return this.idInstrument;
     }
 
-    public void setInstrument(String instrument) {
-        this.instrument = instrument;
+    public void setIdInstrument(long idInstrument) {
+        this.idInstrument = idInstrument;
     }
 
-    public String getStyle() {
-        return this.style;
+    public long getIdStyle() {
+        return this.idStyle;
     }
 
-    public void setStyle(String style) {
-        this.style = style;
+    public void setIdStyle(long idStyle) {
+        this.idStyle = idStyle;
     }
 
     public String getLevel() {
@@ -81,58 +75,23 @@ public class Annonce
         this.info = info;
     }
 
-    public String getDepartement() {
-        return this.departement;
+    public long getIdDepartement() {
+        return this.idDepartement;
     }
 
-    public void setDepartement(String departement) {
-        this.departement = departement;
+    public void setIdDepartement(long idDepartement) {
+        this.idDepartement = idDepartement;
     }
 
-    public Long getGroupe() {
-        return this.groupe;
+    public long getIdGroupe() {
+        return this.idGroupe;
     }
 
-    public void setGroupe(Long groupe) {
-        this.groupe = groupe;
+    public void setIdGroupe(long idGroupe) {
+        this.idGroupe = idGroupe;
     }
 
-    public Annonce id(Long id) {
-        this.id = id;
-        return this;
-    }
-
-    public Annonce instrument(String instrument) {
-        this.instrument = instrument;
-        return this;
-    }
-
-    public Annonce style(String style) {
-        this.style = style;
-        return this;
-    }
-
-    public Annonce level(String level) {
-        this.level = level;
-        return this;
-    }
-
-    public Annonce info(String info) {
-        this.info = info;
-        return this;
-    }
-
-    public Annonce departement(String departement) {
-        this.departement = departement;
-        return this;
-    }
-
-    public Annonce groupe(Long groupe) {
-        this.groupe = groupe;
-        return this;
-    }
+    
 }
 
     
-
-   
