@@ -97,7 +97,7 @@ public class GroupeController {
         annonce.setIdGroupe(groupeId);
         if (annonceRepository.createAnnonce(annonce)) {
 
-            return "AnnonceOk";
+            return "annonceOk";
 
         }
 
