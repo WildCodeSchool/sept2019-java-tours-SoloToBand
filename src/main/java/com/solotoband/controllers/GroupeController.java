@@ -1,16 +1,10 @@
 package com.solotoband.controllers;
 
 import java.util.List;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import com.solotoband.entity.*;
 import com.solotoband.repository.*;
-
-import org.apache.tomcat.util.http.fileupload.RequestContext;
-import org.springframework.cglib.core.CollectionUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,10 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.FlashMap;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.support.RequestContextUtils;
 
 @Controller
 public class GroupeController
@@ -97,10 +87,8 @@ public class GroupeController
         return "annonce";
     }
 
-
     @PostMapping("/annonce/{groupeId}")
     public String postAnnonce(@ModelAttribute @Valid Annonce annonce,@PathVariable long groupeId,  BindingResult bindingResult, Model model) {
-        
         if (bindingResult.hasErrors())
         {
             return "/groupe/{groupeId}";
@@ -108,29 +96,10 @@ public class GroupeController
             annonce.setIdGroupe(groupeId);
         if (annonceRepository.createAnnonce(annonce)){
 
-            return "redirect:/AnnonceOk/"+ groupeId;
+            return "AnnonceOk";
         }
 
         return "erreur";
     }
-    
-    @RequestMapping(value = "/AnnonceOK/{groupeId}", RequestMethod.GET)
-    public String getAnnonceOk(@PathVariable long groupeId, HttpServletRequest request) {
-        Groupe groupe = groupeRepository.findGroupeById(groupeId);
-        ModelAndView modelAndView = new ModelAndView("default");
-
-        Map<String, ?> flashMap = RequestContextUtils.getInputFlashMap(request);
-        if (!CollectionUtils.isEmpty(FlashMap)){
-            modelAndView.addObject("groupeID", flashMap.get("groupeID"));
-        }
-        return "/AnnonceOK/";
-    }
-    @PostMapping("/AnnonceOK/{groupeId}")
-    public String postAnnonceOk(@PathVariable long groupeId) {
-
-        return "redirect:/annonce/"+{groupeId};
-    }
-
-    
 
 }

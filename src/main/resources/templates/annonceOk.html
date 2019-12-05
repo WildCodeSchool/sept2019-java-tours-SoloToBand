@@ -18,14 +18,11 @@
                     
                     <hr class="my-4">
                     <p class="lead">Votre annonce a été correctement enregistrée</p>
-
-                    <form method="GET" action="#" th:action="@{'/annonce/'+ ${groupe.id}}"> 
                     <p class="lead text-center">
-                      <input class="btn btn-secondary" type="submit" value="Enregistrer une nouvelle annonce">
+                      <a class="btn btn-secondary" th:href="@{/groupe}" role="button">Enregistrer une nouvelle annonce</a>
                     </p>
-                    </form>
                     <p class="lead text-center">
-                        <a class="btn btn-secondary" href="/index" role="button">Revenir à l'accueil</a>
+                        <a class="btn btn-secondary" th:href="@{/}" role="button">Revenir à l'accueil</a>
                       </p>
             </div>
             <div class="col-md-2"></div>
