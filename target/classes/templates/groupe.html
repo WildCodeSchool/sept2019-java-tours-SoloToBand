@@ -32,7 +32,7 @@
 <p th:if="${#fields.hasErrors('nameGroupe')}" th:errors="*{nameGroupe}" />
 <!--syntaxe thymeleaf pour les validateurs -->
 <label for="nameGroupe">Nom du groupe:</label><br>
-<input id="nameGroupe" name="nameGroupe" placeholder="Electronics Chewing Gum" required type="text" th:field="*{nameGroupe}">
+<input id="nameGroupe" name="nameGroupe" placeholder="Le nom de votre groupe" required type="text" th:field="*{nameGroupe}">
 <br><br>
 </div>
 
@@ -55,7 +55,7 @@
 <div class="col-3"> 
 <p class="validation" th:if="${#fields.hasErrors('groupMail')}" th:errors="*{groupMail}"/>
 <label for="groupMail">Email:</label><br>
-<input id="groupMail" name="groupMail" placeholder="Richard@gotainer.lol" required type="email" th:field="*{groupMail}">
+<input id="groupMail" name="groupMail" placeholder="@" required type="email" th:field="*{groupMail}">
 <br><br>
 </div>
 </div>

@@ -18,10 +18,10 @@
         <header>
             <div class="row">
               <!--div ligne boostrap header-->
-              <div class="col-lg-2 col-2">
+              <div class="col-lg-2">
               </div>
-              <div class="col-lg-2 col-1"></div>
-              <div class="col-lg-7 col-7">
+              <div class="col-lg-2"></div>
+              <div class="col-lg-7">
                 <h1 class="titre-index">Annonce des musiciens</h1>
               </div>
             </div>
@@ -31,44 +31,42 @@
         <br />
         
         <section class="row">
-        <div class="col-6">
-         <div class= "row mb-2 mt-2" > <!--div ligne boostrap -->
-            <div class="col-3"> 
-                <p th:text="|${groupe.nameGroupe}|">$groupe</p>
-                <br><br>
+        <div class="col-lg-6">
+            <div class= "row mb-2 mt-2" > <!--div ligne boostrap -->
+                <div class="col-4">
+                    <img class="img-fluid" th:src="${groupe.image}">
+                </div>
+                <div class="col-5 text-center"> 
+                    <h3 th:text="|${groupe.nameGroupe}|">$groupe</h3>
+                    <br><br>
+                </div>
             </div>
-
-            <div class="col-3"> 
-                <p th:text="|Nom contact: ${groupe.contactName}|">$contact</p>
-                <br><br>
-            </div>
-        </div>
-
+            
             <div class= "row mb-2 mt-2" >
-            <div class="col-3">
-                <p th:text="|Telephone: ${groupe.groupPhone}|">$tel</p>
+                <div class="col-5 my-4"> 
+                    <h4 th:text="|Nom contact: ${groupe.contactName}|">$contact</h4>
+                    <br><br>
+                </div>
+                <div class="col-5 my-4">
+                    <h4 th:text="|Telephone: ${groupe.groupPhone}|">$tel</h4>
+                    <br><br>
+                </div>
+            </div>
+
+            <div class="col-5"> 
+                <h4 th:text="|Email: ${groupe.groupMail}|">$mail</h4>
                 <br><br>
             </div>
 
-            <div class="col-3"> 
-                <p th:text="|Email: ${groupe.groupMail}|">$mail</p>
-                <br><br>
-            </div>
          </div>
          
-            <div class="row mt-5"> <!--bouton-->
-            <div class="col-4">
-                <img class="img-fluid" th:src="${groupe.image}">
-            </div>
-            </div>
-            <br /><br /> 
             
-        </div>
-       <div class="col-6">
+        
+       <div class="col-lg-6">
                 <form method="POST" action="#" th:action="@{'/annonce/'+ ${groupe.id}}" th:object="${annonce}"> 
                 
-                <div class= "row mb-2 mt-2" >
-                    <div class="col-3"> 
+                <div class= "row mb-2 mt-2">
+                    <div class="col-5"> 
                         <legend>Instrument</legend>
                         <select class="custom-select" name="idInstrument" th:field="*{idInstrument}">
                             <option th:each="instrument : ${instruments}" th:text="${instrument.name}"
@@ -77,7 +75,7 @@
                         <br><br>
                     </div>
                 
-                    <div class="col-3">
+                    <div class="col-5">
                         <legend>Département</legend>
                     <select class="custom-select" name="idDepartement" th:field="*{idDepartement}" >
                         <option th:each="departement : ${departements}"
@@ -86,8 +84,10 @@
                     </select>
                         <br><br>
                     </div>
+                </div>
                 
-                    <div class="col-3">
+                <div class= "row mb-2 mt-2">
+                    <div class="col-5">
                         <legend>Courant musical</legend>
                     <select class="custom-select" name="idStyle" th:field="*{idStyle}">
                         <option th:each="style : ${styles}" th:text="${style.name_style}" th:value="${style.id}"/>
@@ -95,29 +95,34 @@
                         <br><br>
                     </div>
                 
-                    <div class="col-3">
-                        <label for="level">niveau:</label>
-                        <select th:field="*{level}" id="level" name="level" required type="text">
+                    <div class="col-5">
+                        <legend>niveau:</legend>
+                        <select class="custom-select" th:field="*{level}" id="level" name="level" required type="text">
                                 <option th:value="DEBUTANT">Débutant</option>
                                 <option th:value="INTERMEDIAIRE">Intermédiaire</option>
                                 <option th:value="CONFIRME">Confirmé</option>
                                 <option th:value="EXPERT">Expert</option>
                         </select>
                     </div>
-                 </div>
-                 <div class= "row mb-2 mt-2" >
+                </div>
+
+                <div class= "row mb-2 mt-2">
                     <div class="col-10"> 
                         <p class="validation" th:if="${#fields.hasErrors('info')}" th:errors="*{info}"/>
                         <label for="info">Informations sur le groupe:</label>
                         <textarea class="form-control" id="info" rows="5" col="12" name="info" placeholder="Présentez votre groupe" required type="text" th:field="*{info}"></textarea>
-                    </div> -->
-                    <div class="col-4">   
-                        <div class="bouton">
-                            <input type="submit" value="Enregistrer votre annonce">
-                        </div>
                     </div>
                 </div>
-                </form>
+
+                <div class= "row mb-4 mt-4">
+                <div class="col-5"></div>
+                <div class="col-4">
+                        <div class="bouton">
+                            <input class="btn btn-secondary" type="submit" value="Enregistrer votre annonce">
+                        </div>
+                </div>
+             </div>
+            </form>
 
         </div>
 
