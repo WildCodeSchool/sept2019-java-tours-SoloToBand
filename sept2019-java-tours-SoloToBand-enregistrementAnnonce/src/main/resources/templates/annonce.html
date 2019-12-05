@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> <!--import de boostrap-->
+    <link rel="stylesheet" th:href="@{sandstone.min.css}"></link>
+    <link rel="stylesheet" th:href="@{style.css}"></link>
+
+
+    <title>SoloToBand</title>
+</head>
+
+<body>
+   
+    <div class= container> <!--div page boostrap-->
+        <header>
+            <div class="row">
+              <!--div ligne boostrap header-->
+              <div class="col-lg-2 col-2">
+              </div>
+              <div class="col-lg-2 col-1"></div>
+              <div class="col-lg-7 col-7">
+                <h1 class="titre-index">Annonce des musiciens</h1>
+              </div>
+            </div>
+
+        <div th:replace="header :: top"></div> <!--Ajout du header-->
+        </header>
+        <br />
+        
+        <section class="row">
+        <div class="col-6">
+         <div class= "row mb-2 mt-2" > <!--div ligne boostrap -->
+            <div class="col-3"> 
+                <p th:text="|${groupe.nameGroupe}|">$groupe</p>
+                <br><br>
+            </div>
+
+            <div class="col-3"> 
+                <p th:text="|Nom contact: ${groupe.contactName}|">$contact</p>
+                <br><br>
+            </div>
+        </div>
+
+            <div class= "row mb-2 mt-2" >
+            <div class="col-3">
+                <p th:text="|Telephone: ${groupe.groupPhone}|">$tel</p>
+                <br><br>
+            </div>
+
+            <div class="col-3"> 
+                <p th:text="|Email: ${groupe.groupMail}|">$mail</p>
+                <br><br>
+            </div>
+         </div>
+         
+            <div class="row mt-5"> <!--bouton-->
+            <div class="col-4">
+                <img class="img-fluid" th:src="${groupe.image}">
+            </div>
+            </div>
+            <br /><br /> 
+            
+        </div>
+       <div class="col-6">
+                <form method="POST" action="#" th:action="@{/annonce}" th:object="${groupe}"> 
+                
+                <div class= "row mb-2 mt-2" >
+                    <div class="col-3"> 
+                    <legend>Instrument</legend>
+                    <select class="custom-select" name="instrument">
+                    <option th:each="instrument : ${instruments}" th:text="${instrument.name}"
+                    th:value="${instrument.id}"/>
+                    </select>
+                        <br><br>
+                    </div>
+                
+                    <div class="col-3">
+                        <legend>Département</legend>
+                    <select class="custom-select" name="departement">
+                        <option th:each="departement : ${departements}"
+                            th:text="${departement.departement_code} + ' ' + ${departement.departement_nom}"
+                            th:value="${departement.id}">
+                            Ardèche
+                        </option>
+                    </select>
+                        <br><br>
+                    </div>
+                
+                    <div class="col-3">
+                        <legend>Courant musical</legend>
+                    <select class="custom-select" name="musicFlux">
+                        <option th:each="style : ${styles}" th:text="${style.name_style}" th:value="${style.id}">Rock
+                        </option>
+                    </select>
+                        <br><br>
+                    </div>
+                
+                    <div class="col-3">
+                        <label for="level">niveau:</label>
+                        <select id="level" name="level" required type="text">
+                                <option>Débutant</option>
+                                <option>Intermédiaire</option>
+                                <option>Confirmé</option>
+                                <option>Expert</option>
+                        </select>
+                    </div>
+                 </div>
+                 <div class= "row mb-2 mt-2" >
+                    <div class="col-10"> 
+                        <p class="validation" th:if="${#fields.hasErrors('info')}" th:errors="*{info}"/>
+                        <label for="info">Informations sur le groupe:</label>
+                        <textarea class="form-control" id="info" rows="5" col="12" name="info" placeholder="Présentez votre groupe" required type="text" th:field="*{info}"></textarea>
+                    </div> -->
+                    <div class="col-4">   
+                        <div class="bouton">
+                            <input type="submit" value="Enregistrer votre annonce">
+                        </div>
+                    </div>
+                </div>
+                </form>
+
+        </div>
+
+        </section>
+   
+    <footer th:replace="footer :: foot"></footer> <!--Ajout du footer-->
+     </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+</body>
+</html>
