@@ -18,7 +18,9 @@ public class StyleRepository {
 
     public List<Style> findAll() {
 
+
         List<Style> styles = new ArrayList<>();
+
         Statement requete = base.getStatement();
         if (requete == null) {
             return null;

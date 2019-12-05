@@ -3,7 +3,9 @@ package com.solotoband.repository;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+
 import java.util.List;
+
 
 import com.solotoband.database.DBAccess;
 import com.solotoband.entity.Departement;
@@ -15,9 +17,11 @@ public class DepartementRepository {
         base = DBAccess.getInstance();
     }
 
+
     public List<Departement> findAll() {
 
         List<Departement> departements = new ArrayList<>();
+
         Statement requete = base.getStatement();
         if (requete == null) {
             return null;
@@ -36,7 +40,6 @@ public class DepartementRepository {
             return departements;
 
         } catch (Exception e) {
-            
             e.printStackTrace();
             return null;
         }

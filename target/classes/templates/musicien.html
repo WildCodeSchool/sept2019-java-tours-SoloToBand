@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--import de boostrap-->
-    <link rel="stylesheet" th:href="@{sandstone.min.css}">
+    <link rel="stylesheet" th:href="@{/sandstone.min.css}">
     </link>
-    <link rel="stylesheet" th:href="@{style.css}">
+    <link rel="stylesheet" th:href="@{/style.css}">
     </link>
     <title>SoloToBand</title>
 </head>
@@ -28,14 +28,15 @@
         <br /><br />
 
 
-        <form method="GET" th:action="@{musicien/resultats}">
+        <form method="POST" th:object="${createdAnnonce}" th:action="@{/musicien/resultats}">
             <!--methode get, à voir comment envoyer les données-->
 
             <div class="row my-2">
                 <!--div ligne boostrap choix multiple-->
                 <div class="col-lg-3">
                     <legend>Instrument</legend>
-                    <select class="custom-select" name="instrument">
+                    <select class="custom-select" name="instrument" th:field="*{idInstrument}">
+                        <!--insert de l'affichache thymeleaf-->
                         <option th:each="instrument : ${instruments}" th:text="${instrument.name}"
                             th:value="${instrument.id}">guitare</option>
                     </select>
@@ -43,7 +44,7 @@
 
                 <div class="col-lg-3">
                     <legend>Courant musical</legend>
-                    <select class="custom-select" name="musicFlux">
+                    <select class="custom-select" name="musicFlux" th:field="*{idStyle}">
                         <option th:each="style : ${styles}" th:text="${style.name_style}" th:value="${style.id}">Rock
                         </option>
 
@@ -52,7 +53,7 @@
 
                 <div class="col-lg-3">
                     <legend>Département</legend>
-                    <select class="custom-select" name="departement">
+                    <select class="custom-select" name="departement" th:field="*{idDepartement}">
                         <option th:each="departement : ${departements}"
                             th:text="${departement.departement_code} + ' ' + ${departement.departement_nom}"
                             th:value="${departement.id}">
@@ -63,12 +64,12 @@
 
                 <div class="col-lg-3">
                     <legend>Niveau</legend>
-                    <select class="custom-select" name="level">
+                    <select class="custom-select" name="level" th:field="*{level}">
                         <!--Boucle à faire avec BDD-->
-                        <option>Débutant</option>
-                        <option>Intermédiaire</option>
-                        <option>Confirmé</option>
-                        <option>Expert</option>
+                        <option th:value="Debutant">Débutant</option>
+                        <option th:value="Intermediaire">Intermédiaire</option>
+                        <option th:value="Confirme">Confirmé</option>
+                        <option th:value="Expert">Expert</option>
                     </select>
                 </div>
             </div>

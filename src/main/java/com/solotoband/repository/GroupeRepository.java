@@ -8,7 +8,7 @@ import java.sql.*;
 
 public class GroupeRepository {
     //methode qui va appeler la connection à la DB.
-    private  DBAccess database = null;
+    private DBAccess database = null;
 
     public GroupeRepository() {
         database = DBAccess.getInstance();
@@ -19,10 +19,9 @@ public class GroupeRepository {
         try {
             /**
              * fonction et commande SQL afin de générer une clef et de créer l'insert dans la DB.
-             */ 
+             */
             PreparedStatement statement = database.getPrepareStatement(
-                "INSERT INTO groupe (group_name, contact_name, group_phone, group_email, image) VALUES (?, ?, ?, ?, ?)"
-            );
+                    "INSERT INTO groupe (group_name, contact_name, group_phone, group_email, image) VALUES (?, ?, ?, ?, ?)");
 
             statement.setString(1, groupe.getNameGroupe());
             statement.setString(2, groupe.getContactName());
@@ -30,10 +29,8 @@ public class GroupeRepository {
             statement.setString(4, groupe.getGroupMail());
             statement.setString(5, groupe.getImage());
 
-
             // condition si l'execution de l'instruction SQL ne réussi pas.
-            if (statement.executeUpdate() != 1) 
-            {
+            if (statement.executeUpdate() != 1) {
                 //throw new SQLException("failed to insert data");
                 return false;
             }
@@ -42,23 +39,20 @@ public class GroupeRepository {
             ResultSet generatedKeys = statement.getGeneratedKeys();
 
             // Si l'on a un id, appel au constructeur afin de générer un objet groupe pour la db.
-            if (generatedKeys.next()) 
-            {
+            if (generatedKeys.next()) {
                 Long id = generatedKeys.getLong(1);
                 groupe.setId(id); // Ajout de l'id dans l'objet
-                return  true;
-            } else 
-            {
+                return true;
+            } else {
                 //throw new SQLException("failed to get inserted id");
                 return false;
             }
-        } catch (SQLException e) 
-            {
-                return false;
-            }
-    }
+        } catch (SQLException e) {
+            return false;
+        }
 
-	public Groupe findGroupeById(long id) {
+    }
+    public Groupe findGroupeById(long id) {
         Groupe groupe = new Groupe();
         PreparedStatement requete = database.getPrepareStatement("SELECT * FROM groupe WHERE id = ?");
         if (requete == null){
@@ -83,4 +77,5 @@ public class GroupeRepository {
             return null;
         }
     }
+
 }

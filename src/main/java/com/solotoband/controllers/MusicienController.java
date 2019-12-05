@@ -2,6 +2,7 @@ package com.solotoband.controllers;
 
 import java.util.List;
 
+import com.solotoband.entity.Annonce;
 import com.solotoband.entity.Departement;
 import com.solotoband.entity.Instrument;
 import com.solotoband.entity.Style;
@@ -43,9 +44,10 @@ public class MusicienController {
         }
         model.addAttribute("styles", styles);
 
+        model.addAttribute("createdAnnonce", new Annonce());
         return "musicien";
 
-       
+
     }
 
     @GetMapping("musicien/result")

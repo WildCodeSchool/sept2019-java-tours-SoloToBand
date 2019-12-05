@@ -1,23 +1,27 @@
 package com.solotoband.entity;
-import javax.validation.constraints.*;
 
-public class Annonce 
-{
+public class Annonce {
     // Déclaration des variables du constructeur et des validateurs
     private long id;
+
+
     
     private long idInstrument;
 
     private long idStyle;
 
     private String level;
-
-    @NotEmpty 
     private String info;
+
+    private Departement departement;
+    private Instrument instrument;
+    private Style style;
+    private Groupe groupe;
     
     private long idDepartement;
 
     private long idGroupe;
+
 
 
 
@@ -43,6 +47,17 @@ public class Annonce
         this.id = id;
     }
 
+
+
+
+    public Groupe getGroupe() {
+        return this.groupe;
+    }
+
+    public void setGroupe(Groupe groupe) {
+        this.groupe = groupe;
+    }
+
     public long getIdInstrument() {
         return this.idInstrument;
     }
@@ -57,7 +72,36 @@ public class Annonce
 
     public void setIdStyle(long idStyle) {
         this.idStyle = idStyle;
+
     }
+
+    public Style getStyle() {
+        return this.style;
+    }
+
+    public void setStyle(Style sty) {
+        this.style = sty;
+    }
+
+    public Instrument getInstrument() {
+        return this.instrument;
+    }
+
+    public void setInstrument(Instrument inst) {
+        this.instrument = inst;
+    }
+
+
+    public Departement getDepartement() {
+        return this.departement;
+    }
+
+    public void setDepartement(Departement dep) {
+        this.departement = dep;
+    }
+
+    
+
 
     public String getLevel() {
         return this.level;
@@ -74,6 +118,10 @@ public class Annonce
     public void setInfo(String info) {
         this.info = info;
     }
+
+    
+
+
 
     public long getIdDepartement() {
         return this.idDepartement;

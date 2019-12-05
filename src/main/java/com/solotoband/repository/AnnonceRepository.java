@@ -3,13 +3,14 @@ package com.solotoband.repository;
 import com.solotoband.database.DBAccess;
 import com.solotoband.entity.Annonce;
 
+
 import java.sql.*;
 
 
 
 public class AnnonceRepository {
     // methode qui va appeler la connection à la DB.
-    private  DBAccess database = null;
+    private DBAccess database = null;
 
     public AnnonceRepository() {
         database = DBAccess.getInstance();
@@ -35,6 +36,8 @@ public class AnnonceRepository {
             }
             // déclaration et attribution de la variable qui récupère l'id.
             ResultSet generatedKeys = statement.getGeneratedKeys();
+
+
 
             // Si l'on a un id, appel au constructeur afin de générer un objet groupe pour la db.
             if (generatedKeys.next()) 
