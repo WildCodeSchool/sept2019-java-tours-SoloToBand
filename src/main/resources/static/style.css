@@ -9,6 +9,7 @@
 body{
     background-image : url('test2.png');
     background-size : cover;
+    margin-left: 2%;
 
 }
 a{
