@@ -3,29 +3,40 @@ package com.solotoband.entity;
 public class Annonce {
     // Déclaration des variables du constructeur et des validateurs
     private long id;
-    private long id_instrument;
-    private long id_style;
+
+
+    
+    private long idInstrument;
+
+    private long idStyle;
+
     private String level;
     private String info;
-    private long id_departement;
-    private long groupeAnnonce;
+
     private Departement departement;
     private Instrument instrument;
     private Style style;
     private Groupe groupe;
+    
+    private long idDepartement;
+
+    private long idGroupe;
+
+
+
+
 
     public Annonce() {
     }
 
-    public Annonce(long id, long id_instrument, long id_style, String level, String info, long id_departement,
-            long groupeAnnonce) {
+    public Annonce(long id, long idInstrument, long idStyle, String level, String info, long idDepartement, long idGroupe) {
         this.id = id;
-        this.id_instrument = id_instrument;
-        this.id_style = id_style;
+        this.idInstrument = idInstrument;
+        this.idStyle = idStyle;
         this.level = level;
         this.info = info;
-        this.id_departement = id_departement;
-        this.groupeAnnonce = groupeAnnonce;
+        this.idDepartement = idDepartement;
+        this.idGroupe = idGroupe;
     }
 
     public long getId() {
@@ -38,12 +49,30 @@ public class Annonce {
 
 
 
+
     public Groupe getGroupe() {
         return this.groupe;
     }
 
     public void setGroupe(Groupe groupe) {
         this.groupe = groupe;
+    }
+
+    public long getIdInstrument() {
+        return this.idInstrument;
+    }
+
+    public void setIdInstrument(long idInstrument) {
+        this.idInstrument = idInstrument;
+    }
+
+    public long getIdStyle() {
+        return this.idStyle;
+    }
+
+    public void setIdStyle(long idStyle) {
+        this.idStyle = idStyle;
+
     }
 
     public Style getStyle() {
@@ -62,6 +91,7 @@ public class Annonce {
         this.instrument = inst;
     }
 
+
     public Departement getDepartement() {
         return this.departement;
     }
@@ -70,21 +100,8 @@ public class Annonce {
         this.departement = dep;
     }
 
-    public long getId_instrument() {
-        return this.id_instrument;
-    }
+    
 
-    public void setId_instrument(long id_instrument) {
-        this.id_instrument = id_instrument;
-    }
-
-    public long getId_style() {
-        return this.id_style;
-    }
-
-    public void setId_style(long id_style) {
-        this.id_style = id_style;
-    }
 
     public String getLevel() {
         return this.level;
@@ -102,20 +119,27 @@ public class Annonce {
         this.info = info;
     }
 
-    public long getId_departement() {
-        return this.id_departement;
+    
+
+
+
+    public long getIdDepartement() {
+        return this.idDepartement;
     }
 
-    public void setId_departement(long id_departement) {
-        this.id_departement = id_departement;
+    public void setIdDepartement(long idDepartement) {
+        this.idDepartement = idDepartement;
     }
 
-    public long getGroupeAnnonce() {
-        return this.groupeAnnonce;
+    public long getIdGroupe() {
+        return this.idGroupe;
     }
 
-    public void setGroupeAnnonce(long groupeAnnonce) {
-        this.groupeAnnonce = groupeAnnonce;
+    public void setIdGroupe(long idGroupe) {
+        this.idGroupe = idGroupe;
     }
 
+    
 }
+
+    

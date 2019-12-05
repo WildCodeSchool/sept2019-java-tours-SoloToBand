@@ -22,12 +22,9 @@ public class ResultatsRepository {
 
     public List<Annonce> getAnnonceByQuery(long instrument, long style, long departement, String level) {
 
-
         PreparedStatement requete;
 
         List<Annonce> annoncesGroupes = new ArrayList<>();
-
-
 
         try {
             requete = database.getPrepareStatement(
@@ -41,7 +38,6 @@ public class ResultatsRepository {
             requete.setLong(3, departement);
             requete.setString(4, level);
             ResultSet resultSet = requete.executeQuery();
-            
 
             while (resultSet.next()) {
 
@@ -74,11 +70,11 @@ public class ResultatsRepository {
                 groupeObj.setImage(resultSet.getString("groupe.image"));
                 tmpAnnonce.setGroupe(groupeObj);
 
-                tmpAnnonce.setGroupeAnnonce(resultSet.getLong("groupe"));
+                tmpAnnonce.setIdGroupe(resultSet.getLong("groupe"));
                 tmpAnnonce.setId(resultSet.getLong("id"));
-                tmpAnnonce.setId_departement(resultSet.getLong("departement"));
-                tmpAnnonce.setId_instrument(resultSet.getLong("instrument"));
-                tmpAnnonce.setId_style(resultSet.getLong("style"));
+                tmpAnnonce.setIdDepartement(resultSet.getLong("departement"));
+                tmpAnnonce.setIdInstrument(resultSet.getLong("instrument"));
+                tmpAnnonce.setIdStyle(resultSet.getLong("style"));
                 tmpAnnonce.setInfo(resultSet.getString("annonce.info"));
                 tmpAnnonce.setLevel(resultSet.getString("annonce.level"));
                 annoncesGroupes.add(tmpAnnonce);

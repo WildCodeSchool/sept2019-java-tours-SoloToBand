@@ -35,7 +35,7 @@
                 <!--div ligne boostrap choix multiple-->
                 <div class="col-lg-3">
                     <legend>Instrument</legend>
-                    <select class="custom-select" name="instrument" th:field="*{id_instrument}">
+                    <select class="custom-select" name="instrument" th:field="*{idInstrument}">
                         <!--insert de l'affichache thymeleaf-->
                         <option th:each="instrument : ${instruments}" th:text="${instrument.name}"
                             th:value="${instrument.id}">guitare</option>
@@ -44,7 +44,7 @@
 
                 <div class="col-lg-3">
                     <legend>Courant musical</legend>
-                    <select class="custom-select" name="musicFlux" th:field="*{id_style}">
+                    <select class="custom-select" name="musicFlux" th:field="*{idStyle}">
                         <option th:each="style : ${styles}" th:text="${style.name_style}" th:value="${style.id}">Rock
                         </option>
 
@@ -53,7 +53,7 @@
 
                 <div class="col-lg-3">
                     <legend>Département</legend>
-                    <select class="custom-select" name="departement" th:field="*{id_departement}">
+                    <select class="custom-select" name="departement" th:field="*{idDepartement}">
                         <option th:each="departement : ${departements}"
                             th:text="${departement.departement_code} + ' ' + ${departement.departement_nom}"
                             th:value="${departement.id}">

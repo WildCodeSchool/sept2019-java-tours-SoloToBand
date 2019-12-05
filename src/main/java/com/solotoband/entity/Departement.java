@@ -1,6 +1,7 @@
 package com.solotoband.entity;
 
 public class Departement {
+
     private long id;
     private String departement_code;
     private String departement_nom;

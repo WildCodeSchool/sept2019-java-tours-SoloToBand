@@ -17,7 +17,10 @@ public class InstrumentRepository {
     }
 
     public List<Instrument> findAll() {
-        ArrayList<Instrument> instruments = new ArrayList<>();
+
+
+        List<Instrument> instruments = new ArrayList<>();
+
         Statement requete = base.getStatement();
         if (requete == null) {
             return null;

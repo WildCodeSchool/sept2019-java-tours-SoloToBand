@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> <!--import de boostrap-->
-    <link rel="stylesheet" th:href="@{sandstone.min.css}"></link> <!--import de boostrap-->
+    <link rel="stylesheet" th:href="@{/sandstone.min.css}"></link> <!--import de boostrap-->
     <title>Feedback d'envoi</title>
 </head>
 <body>
@@ -14,24 +14,16 @@
             <div class="col-md-2  "></div>
             <div class="col-md-8 col-12 jumbotron px-4">
            
-                    <h1 class="display-3 text-center">Félicitations !</h1>
-                    <p class="lead">Vous avez entrer les données suivantes :</p>
+                    <h1 class="display-3 text-center">Félicitations</h1>
+                    
                     <hr class="my-4">
-                    <ul class="list-group">
-                            <img class="img-fluid" th:src="${groupe.image}">
-                            <li class="list-group-item list-group-item-action" th:text="|Nom: ${groupe.nameGroupe}|">$nameGroupe</li>
-                            <li class="list-group-item list-group-item-action" th:text="|Nom contact: ${groupe.contactName}|">$contactName</li>
-                            <li class="list-group-item list-group-item-action" th:text="|Telephone: ${groupe.groupPhone}|">$groupPhone</li>
-                            <li class="list-group-item list-group-item-action" th:text="|Email: ${groupe.groupMail}|">$groupMail</li>
-                            <li class="list-group-item list-group-item-action" th:text="|Instrument: ${groupe.instrument}|">$instrument</li>
-                            <li class="list-group-item list-group-item-action" th:text="|Courant musical: ${groupe.musicFlux}|">$musicFlux</li>
-                            <li class="list-group-item list-group-item-action" th:text="|Niveau: ${groupe.level}|">$level</li>
-                            <li class="list-group-item list-group-item-action" th:text="|Département: ${groupe.departement}|">$departement</li>
-                            <li class="list-group-item list-group-item-action" th:text="|Info: ${groupe.groupInfo}|">$groupInfo</li>
-                        </ul>
+                    <p class="lead text-center">Votre annonce a été correctement enregistrée</p>
                     <p class="lead text-center">
-                      <a class="btn btn-secondary" href="/groupe" role="button">OK</a>
+                      <a class="btn btn-secondary" th:href="@{/groupe}" role="button">Enregistrer une nouvelle annonce</a>
                     </p>
+                    <p class="lead text-center">
+                        <a class="btn btn-secondary" th:href="@{/}" role="button">Revenir à l'accueil</a>
+                      </p>
             </div>
             <div class="col-md-2"></div>
         </div>

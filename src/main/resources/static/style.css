@@ -9,6 +9,7 @@
 body{
     background-image : url('test2.png');
     background-size : cover;
+    margin-left: 2%;
 
 }
 a{
@@ -22,6 +23,14 @@ a{
 }
 h2{
     color : #fff;
+}
+
+h3{
+    color : wheat;
+}
+
+h4{
+    color : rgb(187, 184, 184);
 }
 
 h1{

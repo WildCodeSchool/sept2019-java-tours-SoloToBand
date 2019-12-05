@@ -43,8 +43,10 @@ public class MusicienController {
 
         }
         model.addAttribute("styles", styles);
+
         model.addAttribute("createdAnnonce", new Annonce());
         return "musicien";
+
 
     }
 
