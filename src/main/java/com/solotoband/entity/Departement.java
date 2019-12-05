@@ -1,10 +1,19 @@
 package com.solotoband.entity;
 
 public class Departement {
-    private Long id;
+    private long id;
     private String departement_code;
     private String departement_nom;
 
+    public Departement() {
+
+    }
+
+    public Departement(long id, String code, String name) {
+        this.id = id;
+        this.departement_code = code;
+        this.departement_nom = name;
+    }
 
     public Long getId() {
         return this.id;
@@ -30,6 +39,3 @@ public class Departement {
         this.departement_nom = departement_nom;
     }
 }
-  
-   
-    

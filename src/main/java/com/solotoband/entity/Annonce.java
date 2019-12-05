@@ -1,68 +1,89 @@
 package com.solotoband.entity;
-import javax.validation.constraints.*;
 
-public class Annonce 
-{
+public class Annonce {
     // Déclaration des variables du constructeur et des validateurs
-    private Long id;
-
-    @NotEmpty
-    @Size(min=1, max= 50, message="Nom trop grand")
-    private String instrument;
-
-    @NotEmpty
-    @Size(min=1, max= 50, message="Nom trop grand")  
-    private String style;
-
-    @NotEmpty
-    @Size(min=1, max= 50, message="Nom trop grand")
+    private long id;
+    private long id_instrument;
+    private long id_style;
     private String level;
-
-    @NotEmpty 
     private String info;
-
-    @NotEmpty
-    @Size(min=1, max= 50, message="Nom trop grand")
-    private String departement;
-
-    private Long groupe;
-
+    private long id_departement;
+    private long groupeAnnonce;
+    private Departement departement;
+    private Instrument instrument;
+    private Style style;
+    private Groupe groupe;
 
     public Annonce() {
     }
 
-    public Annonce(Long id, String instrument, String style, String level, String info, String departement, Long groupe) {
+    public Annonce(long id, long id_instrument, long id_style, String level, String info, long id_departement,
+            long groupeAnnonce) {
         this.id = id;
-        this.instrument = instrument;
-        this.style = style;
+        this.id_instrument = id_instrument;
+        this.id_style = id_style;
         this.level = level;
         this.info = info;
-        this.departement = departement;
-        this.groupe = groupe;
+        this.id_departement = id_departement;
+        this.groupeAnnonce = groupeAnnonce;
     }
 
-    public Long getId() {
+    public long getId() {
         return this.id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public String getInstrument() {
-        return this.instrument;
+
+
+    public Groupe getGroupe() {
+        return this.groupe;
     }
 
-    public void setInstrument(String instrument) {
-        this.instrument = instrument;
+    public void setGroupe(Groupe groupe) {
+        this.groupe = groupe;
     }
 
-    public String getStyle() {
+    public Style getStyle() {
         return this.style;
     }
 
-    public void setStyle(String style) {
-        this.style = style;
+    public void setStyle(Style sty) {
+        this.style = sty;
+    }
+
+    public Instrument getInstrument() {
+        return this.instrument;
+    }
+
+    public void setInstrument(Instrument inst) {
+        this.instrument = inst;
+    }
+
+    public Departement getDepartement() {
+        return this.departement;
+    }
+
+    public void setDepartement(Departement dep) {
+        this.departement = dep;
+    }
+
+    public long getId_instrument() {
+        return this.id_instrument;
+    }
+
+    public void setId_instrument(long id_instrument) {
+        this.id_instrument = id_instrument;
+    }
+
+    public long getId_style() {
+        return this.id_style;
+    }
+
+    public void setId_style(long id_style) {
+        this.id_style = id_style;
     }
 
     public String getLevel() {
@@ -81,58 +102,20 @@ public class Annonce
         this.info = info;
     }
 
-    public String getDepartement() {
-        return this.departement;
+    public long getId_departement() {
+        return this.id_departement;
     }
 
-    public void setDepartement(String departement) {
-        this.departement = departement;
+    public void setId_departement(long id_departement) {
+        this.id_departement = id_departement;
     }
 
-    public Long getGroupe() {
-        return this.groupe;
+    public long getGroupeAnnonce() {
+        return this.groupeAnnonce;
     }
 
-    public void setGroupe(Long groupe) {
-        this.groupe = groupe;
+    public void setGroupeAnnonce(long groupeAnnonce) {
+        this.groupeAnnonce = groupeAnnonce;
     }
 
-    public Annonce id(Long id) {
-        this.id = id;
-        return this;
-    }
-
-    public Annonce instrument(String instrument) {
-        this.instrument = instrument;
-        return this;
-    }
-
-    public Annonce style(String style) {
-        this.style = style;
-        return this;
-    }
-
-    public Annonce level(String level) {
-        this.level = level;
-        return this;
-    }
-
-    public Annonce info(String info) {
-        this.info = info;
-        return this;
-    }
-
-    public Annonce departement(String departement) {
-        this.departement = departement;
-        return this;
-    }
-
-    public Annonce groupe(Long groupe) {
-        this.groupe = groupe;
-        return this;
-    }
 }
-
-    
-
-   

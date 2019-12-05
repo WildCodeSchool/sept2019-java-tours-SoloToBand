@@ -17,14 +17,14 @@ public class InstrumentRepository {
     }
 
     public List<Instrument> findAll() {
-        List<Instrument> instruments = new ArrayList();
+        ArrayList<Instrument> instruments = new ArrayList<>();
         Statement requete = base.getStatement();
         if (requete == null) {
             return null;
         }
         ResultSet resultats;
         try {
-            resultats = requete.executeQuery("SELECT * FROM instrument");
+            resultats = requete.executeQuery("SELECT * FROM instrument ORDER BY name");
             while (resultats.next()) {
                 Instrument instrument = new Instrument();
                 instrument.setId(resultats.getLong("idinstrument"));
