@@ -16,8 +16,13 @@ public class InstrumentRepository {
     public InstrumentRepository() {
         base = DBAccess.getInstance();
     }
-
+    /**
+     * Fonction findAll qui permet de renvoyer 
+     * tous les instruments stockés dans la DB
+     * @return
+     */
     public List<Instrument> findAll() {
+        // Crétion d'un arrayList d'objets instruments
         List<Instrument> instruments = new ArrayList<>();
         Statement requete = base.getStatement();
         if (requete == null) {
