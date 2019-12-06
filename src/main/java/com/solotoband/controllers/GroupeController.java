@@ -139,11 +139,15 @@ public class GroupeController {
             annonce.setIdGroupe(groupeId);
         if (annonceRepository.createAnnonce(annonce)){
 
-            return "annonceOk";
+            return "redirect:/annonceOk/"+groupeId;
         }
-        
-
         return "erreur";
+    }
+
+    @GetMapping("/annonceOk/{groupeId}")
+    public String annonceOk(@PathVariable long groupeId) {
+        
+        return "annonceOk";
     }
 
     @PostMapping("/musicien/resultats")
