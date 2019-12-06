@@ -51,7 +51,7 @@ public class GroupeController {
      * @param groupeId
      */
     @GetMapping("/groupe/{groupeId}")
-    public String annonce(@PathVariable final long groupeId, Model model) {
+    public String annonce(@PathVariable long groupeId, Model model) {
 
         // création d'un groupe à partir de l'id récupéré dans l'url
         Groupe groupe = groupeRepository.findGroupeById(groupeId);
@@ -62,12 +62,18 @@ public class GroupeController {
         Annonce annonce = new Annonce();
         model.addAttribute("annonce", annonce);
 
-        //appel de la méthode me permettant de récuperer la liste des instruments le >select>
+        //appel de la méthode me permettant de récuperer la liste des instruments le <select>
         List<Instrument> instruments = depot.findAll();
         if (instruments == null) {
             return "erreur";
         }
         model.addAttribute("instruments", instruments);
+
+        // Déclaration et ajout du model pour ajouter un instrument
+        Instrument instrument = new Instrument();
+        model.addAttribute("instrument", instrument);
+        Style style = new Style();
+        model.addAttribute("style", style);
 
         //appel de la méthode me permettant de récuperer la liste des départements le >select>
         List<Departement> departements = depotDepartements.findAll();
@@ -87,21 +93,61 @@ public class GroupeController {
 
         return "annonce";
     }
-
-    @PostMapping("/annonce/{groupeId}")
-    public String postAnnonce(@ModelAttribute @Valid Annonce annonce, @PathVariable long groupeId,
-            BindingResult bindingResult, Model model) {
-        if (bindingResult.hasErrors()) {
-            return "/groupe/{groupeId}";
-        }
-        annonce.setIdGroupe(groupeId);
-        if (annonceRepository.createAnnonce(annonce)) {
-
-            return "annonceOk";
-
+   
+   
+    @PostMapping("/instrument/{groupeId}")
+    public String postInstrument(@ModelAttribute @Valid Instrument instrument, 
+                                BindingResult bindingResult, Model model,
+                                @PathVariable long groupeId)
+    {
+        if (bindingResult.hasErrors())
+        {
+            return "redirect:/groupe/"+groupeId;
         }
 
+        if (depot.createInstrument(instrument)){
+
+            return "redirect:/groupe/"+groupeId;
+        }
         return "erreur";
+    }
+
+    @PostMapping("/style/{groupeId}")
+    public String postInstrument(@ModelAttribute @Valid Style style, 
+                                BindingResult bindingResult, Model model,
+                                @PathVariable long groupeId)
+    {
+        if (bindingResult.hasErrors())
+        {
+            return "redirect:/groupe/"+groupeId;
+        }
+
+        if (depotStyle.createStyle(style)){
+
+            return "redirect:/groupe/"+groupeId;
+        }
+        return "erreur";
+    }
+    @PostMapping("/annonce/{groupeId}")
+    public String postAnnonce(@ModelAttribute @Valid Annonce annonce, 
+                                @PathVariable long groupeId,  
+                                BindingResult bindingResult, Model model) {
+        if (bindingResult.hasErrors())
+        {
+            return "erreur";
+        }
+            annonce.setIdGroupe(groupeId);
+        if (annonceRepository.createAnnonce(annonce)){
+
+            return "redirect:/annonceOk/"+groupeId;
+        }
+        return "erreur";
+    }
+
+    @GetMapping("/annonceOk/{groupeId}")
+    public String annonceOk(@PathVariable long groupeId) {
+        
+        return "annonceOk";
     }
 
     @PostMapping("/musicien/resultats")

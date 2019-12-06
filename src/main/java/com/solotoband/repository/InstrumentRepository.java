@@ -1,5 +1,6 @@
 package com.solotoband.repository;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -17,10 +18,7 @@ public class InstrumentRepository {
     }
 
     public List<Instrument> findAll() {
-
-
         List<Instrument> instruments = new ArrayList<>();
-
         Statement requete = base.getStatement();
         if (requete == null) {
             return null;
@@ -43,7 +41,46 @@ public class InstrumentRepository {
             e.printStackTrace();
             return null;
         }
+    }
 
+    public boolean createInstrument(Instrument instrument){
+        try {
+            /**
+             * fonction et commande SQL afin de générer une clef et de créer l'insert dans la DB.
+             */ 
+            PreparedStatement statement = base.getPrepareStatement(
+                "INSERT INTO instrument(name, categorie) VALUES(?, ?)"
+            );
+
+
+            statement.setString(1, instrument.getName());
+            statement.setString(2, instrument.getCategorie());
+            // condition si l'execution de l'instruction SQL ne réussi pas.
+            if (statement.executeUpdate() != 1) 
+            {
+                //throw new SQLException("failed to insert data");
+                return false;
+            }
+
+            // déclaration et attribution de la variable qui récupère l'id.
+            ResultSet generatedKeys = statement.getGeneratedKeys();
+
+            // Si l'on a un id, appel au constructeur afin de générer un objet groupe pour la db.
+            if (generatedKeys.next()) 
+            {
+                Long id = generatedKeys.getLong(1);
+                instrument.setId(id); // Ajout de l'id dans l'objet
+                return  true;
+            } else 
+            {
+                //throw new SQLException("failed to get inserted id");
+                return false;
+            }
+        } catch (SQLException e) 
+            {
+                return false;
+            }
+    
     }
 
 }

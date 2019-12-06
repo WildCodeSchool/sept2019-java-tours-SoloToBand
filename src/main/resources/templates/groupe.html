@@ -28,7 +28,7 @@
             feedback-->
 
 <div class= "row mb-2 mt-2" > <!--div ligne boostrap -->
-<div class="col-3"> 
+<div class="col-lg-3 text-center"> 
 <p th:if="${#fields.hasErrors('nameGroupe')}" th:errors="*{nameGroupe}" />
 <!--syntaxe thymeleaf pour les validateurs -->
 <label for="nameGroupe">Nom du groupe:</label><br>
@@ -36,7 +36,7 @@
 <br><br>
 </div>
 
-<div class="col-3"> 
+<div class="col-lg-3 text-center"> 
 <p class="validation" th:if="${#fields.hasErrors('contactName')}" th:errors="*{contactName}"/>
 <label for="contactName">Nom du contact:</label><br>
 <input id="contactName" name="contactName" placeholder="Richard" required type="text" th:field="*{contactName}">
@@ -45,14 +45,14 @@
 </div>
 
 <div class= "row mb-2 mt-2" >
-<div class="col-3">
+<div class="col-lg-3 text-center">
 <p class="validation" th:if="${#fields.hasErrors('groupPhone')}" th:errors="*{groupPhone}"/>
 <label for="groupPhone">Téléphone:</label><br>
 <input id="groupPhone" name="groupPhone" placeholder="06xxxxxxxx" required type="tel" th:field="*{groupPhone}">
 <br><br>
 </div>
 
-<div class="col-3"> 
+<div class="col-lg-3 text-center"> 
 <p class="validation" th:if="${#fields.hasErrors('groupMail')}" th:errors="*{groupMail}"/>
 <label for="groupMail">Email:</label><br>
 <input id="groupMail" name="groupMail" placeholder="@" required type="email" th:field="*{groupMail}">
@@ -60,15 +60,15 @@
 </div>
 </div>
 
-<div class="row mt-5"> <!--bouton-->
-<div class="col-4">
+<div class="row mt-3"> <!--bouton-->
+<div class="col-lg-3 text-center">
 <p class="validation" th:if="${#fields.hasErrors('image')}" th:errors="*{image}"/>
 <label for="image">Copiez ici l'url de votre image:</label><br>
 <input  id="image" name="image" placeholder="http//" required type="text" th:field="*{image}"></input>
 </div>
-<div class="col-4">   
+<div class="col-lg-6 my-4 text-center">   
 <div class="bouton">
-<input type="submit" value="Enregistrer votre groupe">
+<input class="btn btn-secondary" type="submit" value="Enregistrer votre groupe">
 </div>
 </div>
 </div>
