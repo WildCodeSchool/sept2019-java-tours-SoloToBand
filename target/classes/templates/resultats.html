@@ -39,24 +39,15 @@
       <ul class="list-group col-form-label-sm col-lg-5 ml-4 mr-5" th:each="annonce : ${annonceList}">
         <li class="list-group-item" th:text="|Info: ${annonce.info}|">$groupMail</li>
         <li class="list-group-item" th:text="|Département: ${annonce.departement.departement_nom}|">$groupMail</li>
-
-
-
         <li class="list-group-item" th:text="|Instrument: ${annonce.instrument.name}|">$groupMail</li>
         <li class="list-group-item" th:text="|Instrument: ${annonce.instrument.categorie}|">$groupMail</li>
-
-
-
         <li class="list-group-item" th:text="|Nom du groupe: ${annonce.groupe.nameGroupe}|">$groupMail</li>
         <li class="list-group-item" th:text="|Nom du contact: ${annonce.groupe.contactName}|">$groupMail</li>
         <li class="list-group-item" th:text="|Telephone: ${annonce.groupe.groupPhone}|">$groupMail</li>
         <li class="list-group-item" th:text="|@ : ${annonce.groupe.groupMail}|">$groupMail</li>
-        <li class="list-group-item" th:text="${annonce.groupe.image}">$groupMail</li>
-
-
+        <img class="image-resultat-groupe" th:src="${annonce.groupe.image}"\>
         <li class="list-group-item" th:text="|Style : ${annonce.style.name_style}|">$groupMail</li>
         <li class="list-group-item" th:text="|Courant musical :${annonce.style.courant}|">$groupMail</li>
-
         <hr class="my-4">
       </ul>
     </div>

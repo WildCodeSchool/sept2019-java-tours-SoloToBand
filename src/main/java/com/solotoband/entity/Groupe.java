@@ -23,7 +23,7 @@ public class Groupe {
     @Pattern(regexp = "^[a-z-+.@A-Z0-9]*$", message = "Vous utilisez des caractères non valides")
     private String groupMail;
 
-    @NotNull
+    
     private String image;
 
     // Constructeurs du groupe

@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> <!--import de boostrap-->
     <link rel="stylesheet" th:href="@{/sandstone.min.css}"></link>
     <link rel="stylesheet" th:href="@{/style.css}"></link>
-
-
     <title>SoloToBand</title>
 </head>
 
@@ -63,10 +61,14 @@
             
         
        <div class="col-lg-6">
-            <form method="POST" action="#" th:action="@{'/instrument/'+ ${groupeId}}" th:object="${instrument}">
+           <button id="replybutton" class="btn4 like">
+               <span class="btn reply" id="replyb" onclick="$('#reply').toggle();">Ajouter un instrument</span>
+           </button>
+
+            <form id="reply" style="display:none;background-color: transparent; border: none;" class="form-control pull-right mb-4" method="POST" action="#" th:action="@{'/instrument/'+ ${groupeId}}" th:object="${instrument}">
                 <div class= "row mb-2 mt-2 ">
                     <div class="col-lg-4 text-center">
-                        <h5>Nom de l'instrument</h5>
+                        <h5>Nom</h5>
                         <input type="text" placeholder="Guitare, Piano, ..." th:field="*{name}"/>
                     </div>
                     <div class="col-lg-4 text-center">
@@ -78,8 +80,11 @@
                     </div>
                 </div>
              </form>
-
-             <form method="POST" action="#" th:action="@{'/style/'+ ${groupeId}}" th:object="${style}">
+             <br>
+             <button id="replybutton" class="btn4 like">
+                    <span class="btn reply" id="replyb" onclick="$('#reply2').toggle();">Ajouter un Style</span>
+                </button>
+             <form id="reply2" style="display:none;background-color: transparent; border: none;" class="form-control pull-right mb-5" method="POST" action="#" th:action="@{'/style/'+ ${groupeId}}" th:object="${style}">
                 <div class= "row mb-2 mt-2 ">
                         <div class="col-lg-4 text-center">
                             <h5>Nom du Style</h5>
@@ -96,7 +101,7 @@
         <br>             
              </form>
 
-                <form method="POST" action="#" th:action="@{'/annonce/'+ ${groupe.id}}" th:object="${annonce}"> 
+                <form class="mt-4" method="POST" action="#" th:action="@{'/annonce/'+ ${groupe.id}}" th:object="${annonce}"> 
                 
                 <div class= "row mb-2 mt-2">
                     <div class="col-5"> 
@@ -167,5 +172,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 </body>
 </html>
