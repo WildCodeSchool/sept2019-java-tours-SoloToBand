@@ -5,15 +5,14 @@ public class Instrument {
     private String name;
     private String categorie;
 
-
-    public Instrument() {
+    public Instrument(){
 
     }
 
-    public Instrument(long id, String name, String categorie) {
+    public Instrument(long id, String name, String categorie){
         this.id = id;
         this.name = name;
-        this.categorie = categorie;
+        this.categorie=categorie;
     }
 
     public long getId() {
