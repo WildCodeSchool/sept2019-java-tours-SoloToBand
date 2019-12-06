@@ -65,15 +65,15 @@
        <div class="col-lg-6">
             <form method="POST" action="#" th:action="@{'/instrument/'+ ${groupeId}}" th:object="${instrument}">
                 <div class= "row mb-2 mt-2 ">
-                    <div class="col-4 text-center">
+                    <div class="col-lg-4 text-center">
                         <h5>Nom de l'instrument</h5>
                         <input type="text" placeholder="Guitare, Piano, ..." th:field="*{name}"/>
                     </div>
-                    <div class="col-4 text-center">
+                    <div class="col-lg-4 text-center">
                         <h5>Cathégorie</h5>
                         <input type="text" placeholder="Corde, Vent, Percution..." th:field="*{categorie}"/>
                     </div>
-                    <div class="col-3 mt-4">
+                    <div class="col-lg-3 mt-4 text-center">
                         <input class="btn btn-secondary" type="submit" value="Ajouter un instrument"/>
                     </div>
                 </div>
@@ -81,15 +81,15 @@
 
              <form method="POST" action="#" th:action="@{'/style/'+ ${groupeId}}" th:object="${style}">
                 <div class= "row mb-2 mt-2 ">
-                        <div class="col-4 text-center">
+                        <div class="col-lg-4 text-center">
                             <h5>Nom du Style</h5>
                             <input type="text" placeholder="Punk, Metal, ..." th:field="*{name_style}"/>
                         </div>
-                        <div class="col-4 text-center">
+                        <div class="col-lg-4 text-center">
                             <h5>Courrant musical</h5>
                             <input type="text" placeholder="Rock, Pop, ..." th:field="*{courant}"/>
                         </div>
-                        <div class="col-3 mt-4">
+                        <div class="col-lg-3 mt-4 text-center">
                             <input class="btn btn-secondary" type="submit" value="Ajouter un style"/>
                         </div>
                 </div>
