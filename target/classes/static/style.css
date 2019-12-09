@@ -1,23 +1,24 @@
 .footer {
     background: #222222 none repeat scroll 0 0;
     padding: 20px;
-     width : 100%;
+    width: 100%;
 
 
 }
 
-#form1{
-    display:none;
- }
+#form1 {
+    display: none;
+}
 
-body{
-    background-image : url('test2.png');
-    background-size : cover;
+body {
+    background-image: url('test2.png');
+    background-size: cover;
     margin-left: 2%;
 
 }
-a{
- color : #fff;
+
+a {
+    color: #fff;
 
 }
 
@@ -25,32 +26,35 @@ a{
     color: #fff;
 
 }
-h2{
-    color : #fff;
-}
 
-h3{
-    color : wheat;
-}
-
-h4{
-    color : rgb(187, 184, 184);
-}
-
-h5{
-    color : rgb(216, 196, 196);
-}
-
-h1{
-    color : black;
-}
-
-legend{
+h2 {
     color: #fff;
 }
-label{
+
+h3 {
+    color: wheat;
+}
+
+h4 {
+    color: rgb(187, 184, 184);
+}
+
+h5 {
+    color: rgb(216, 196, 196);
+}
+
+h1 {
+    color: black;
+}
+
+legend {
     color: #fff;
 }
+
+label {
+    color: #fff;
+}
+
 .tirtre-index {
     text-align: right;
 }
@@ -90,8 +94,9 @@ header {
 .error {
     font-size: 2em;
 }
-p{
-    color : #fff;
+
+p {
+    color: #fff;
 }
 
 
@@ -104,6 +109,11 @@ p{
         margin: auto;
         position: sticky;
 
+
+    }
+
+    .menu-phone {
+        display: none;
 
     }
 
